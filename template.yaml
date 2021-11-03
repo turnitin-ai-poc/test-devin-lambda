@@ -11,64 +11,64 @@ Globals:
     Timeout: 30
 
 Resources:
-  _Temp_Function:
+  __temp_title__Function:
     # More info about Function Resource: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
     Type: AWS::Serverless::Function
     Properties:
-      CodeUri: _temp_-api/target/_temp_-api-1.0.0.jar
-      Handler: com.turnitin._Temp_
+      CodeUri: __temp_skewer__-api/target/__temp_skewer__-api-1.0.0.jar
+      Handler: com.turnitin.__temp_title__
       Events:
-        _Temp_HelloApi:
+        __temp_title__HelloApi:
           Type: Api
           Properties:
             Path: /hello
             Method: GET
-  _Temp_DynamoGetFunction:
+  __temp_title__DynamoGetFunction:
     # More info about Function Resource: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
     Type: AWS::Serverless::Function
     Properties:
-      CodeUri: _temp_-api/target/_temp_-api-1.0.0.jar
-      Handler: com.turnitin._Temp_DynamoGet
+      CodeUri: __temp_skewer__-api/target/__temp_skewer__-api-1.0.0.jar
+      Handler: com.turnitin.__temp_title__DynamoGet
       Environment:
         # More info about Env Vars: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#environment-object
         Variables:
           dynamo_table:
-            Ref: _Temp_Table01
+            Ref: __temp_title__Table01
       Policies:
       - DynamoDBCrudPolicy:
           TableName:
-            Ref: _Temp_Table01
+            Ref: __temp_title__Table01
       Events:
-        _Temp_DynamoGetApi:
+        __temp_title__DynamoGetApi:
           Type: Api
           Properties:
             Path: /dynamo/{dbkey}
             Method: GET
-  _Temp_DynamoPostFunction:
+  __temp_title__DynamoPostFunction:
     # More info about Function Resource: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
     Type: AWS::Serverless::Function
     Properties:
-      CodeUri: _temp_-api/target/_temp_-api-1.0.0.jar
-      Handler: com.turnitin._Temp_DynamoPost
+      CodeUri: __temp_skewer__-api/target/__temp_skewer__-api-1.0.0.jar
+      Handler: com.turnitin.__temp_title__DynamoPost
       Environment:
         # More info about Env Vars: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#environment-object
         Variables:
           dynamo_table:
-            Ref: _Temp_Table01
+            Ref: __temp_title__Table01
       Policies:
         - DynamoDBCrudPolicy:
             TableName:
-              Ref: _Temp_Table01
+              Ref: __temp_title__Table01
       Events:
-        _Temp_DyanmpPostApi:
+        __temp_title__DyanmpPostApi:
           Type: Api
           Properties:
             Path: /dynamo/{dbkey}/{value}
             Method: POST
-  _Temp_Table01:
+  __temp_title__Table01:
     Type: AWS::DynamoDB::Table
     Properties:
-      TableName: _Temp_Table01
+      TableName: __temp_title__Table01
       BillingMode: PAY_PER_REQUEST
       AttributeDefinitions:
       - AttributeName: pk

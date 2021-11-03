@@ -2,9 +2,9 @@ version = 0.1
 [default]
 [default.deploy]
 [default.deploy.parameters]
-stack_name = "_temp_"
+stack_name = "__temp_skerwer__"
 s3_bucket = "aws-sam-cli-managed-default-samclisourcebucket-dm05a8pfwg2j"
-s3_prefix = "_temp_"
+s3_prefix = "__temp_skerwer__"
 region = "us-east-2"
 confirm_changeset = true
 capabilities = "CAPABILITY_IAM"

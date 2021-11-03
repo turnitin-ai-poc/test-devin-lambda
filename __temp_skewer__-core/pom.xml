@@ -2,14 +2,14 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <name>_Temp_ Core</name>
+    <name>__temp__ Core</name>
 
-    <artifactId>_temp_-core</artifactId>
+    <artifactId>__temp_skewer__-core</artifactId>
     <version>${revision}</version>
     <packaging>jar</packaging>
 
     <parent>
-        <artifactId>_temp_</artifactId>
+        <artifactId>__temp_skewer__</artifactId>
         <groupId>com.turnitin</groupId>
         <version>1.0.0</version>
     </parent>

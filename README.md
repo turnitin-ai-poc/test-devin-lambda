@@ -6,7 +6,7 @@ However, if you're trying to create a new lambda, this repo should be cloned usi
 [GitHub Enterprise](https://ghe.iparadigms.com/AppOps/project-generator.git) and [BitBucket](https://mromanini@bitbucket.org/examsoft/project-generator.git). Once that's done, the below applies.
 
 
-# _Temp_ QuickStart
+# __temp_title__ QuickStart
 
 Have working AWS credentials for DEV001, either `default` or env var `AWS_PROFILE` points to them
 
@@ -19,13 +19,13 @@ To "un-deploy" a stack from the AWS dev environment, run `aws cloudformation del
 Note: The local /crud endpoint depends on `sam deploy` being done at least once
 to create the required DynamoDB table in DEV001.
 
-# _Temp_ Details
+# __temp_title__ Details
 
 This project contains source code and supporting files for a serverless application that you can deploy with the AWS SAM
 CLI. It includes the following files and folders:
 
-- _temp_-api/src/main - Code for two Lambda functions, including log configuration.
-- _temp_-core/ - Shared code (DB objects) and resources (log config).
+- __temp_skerwer__-api/src/main - Code for two Lambda functions, including log configuration.
+- __temp_skerwer__-core/ - Shared code (DB objects) and resources (log config).
 - pom.xml - Defines this multi-module Maven project with the two modules above.
 - samconfig.xml - SAM config for deployments.
 - template.yaml - SAM template that defines resources for these functions.
@@ -42,14 +42,14 @@ are for writing to and reading from DynamoDB
 
 This code has three entry points configured:
 
-1. `_temp_-api/src/main/java/com/turnitin/_temp_` This entry point is for handling regular HTTP requests.
-2. `_temp_-api/src/main/java/com/turnitin/_temp_DynamoGet` This entry point is an example of handling HTTP requests which reads data from DynamoDB.
-3. `_temp_-api/src/main/java/com/turnitin/_temp_DynamoPost` This entry point is an example of handling HTTP requests which writes data from DynamoDB.
+1. `__temp_skerwer__-api/src/main/java/com/turnitin/__temp_lower__/__temp_title__Get` This entry point is for handling regular HTTP requests.
+2. `__temp_skerwer__-api/src/main/java/com/turnitin/__temp_lower__/__temp_title__DynamoGet` This entry point is an example of handling HTTP requests which reads data from DynamoDB.
+3. `__temp_skerwer__-api/src/main/java/com/turnitin/__temp_lower__/__temp_title__DynamoPost` This entry point is an example of handling HTTP requests which writes data from DynamoDB.
 
 Based on your use case you should delete the one you don't need/want.  To do so, remove the unwanted entry point from the code and from the `template.yaml`.  
 
-**Note:** The Dynamo entry point uses the schema which is defined in `template.yaml` as ` _Temp_Table01`. Should your use case not need
-DynamoDB remove the two entry poins from the code, as well as the package `_temp_-core/src/main/java/com/turnitin/dao`. The remove the entrypoints and the table from the `template.yaml` 
+**Note:** The Dynamo entry point uses the schema which is defined in `template.yaml` as ` __temp_title__Table01`. Should your use case not need
+DynamoDB remove the two entry poins from the code, as well as the package `__temp_skerwer__-core/src/main/java/com/turnitin/__title_lower__/dao`. The remove the entrypoints and the table from the `template.yaml` 
 as well as the dependency from the `pom.xml` in order to reduce your package size. 
 
 # Dependencies

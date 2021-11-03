@@ -2,16 +2,16 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <name>_Temp_</name>
+    <name>__temp__</name>
 
     <groupId>com.turnitin</groupId>
-    <artifactId>_temp_</artifactId>
+    <artifactId>__temp_skewer__</artifactId>
     <version>${revision}</version>
     <packaging>pom</packaging>
 
     <modules>
-        <module>_temp_-core</module>
-        <module>_temp_-api</module>
+        <module>__temp_skewer__-core</module>
+        <module>__temp_skewer__-api</module>
     </modules>
 
     <properties>
@@ -220,7 +220,12 @@
             <version>3.11.1</version>
             <scope>test</scope>
         </dependency>
-
+        <dependency>
+            <groupId>com.amazonaws</groupId>
+            <artifactId>aws-lambda-java-tests</artifactId>
+            <version>1.0.2</version>
+            <scope>test</scope>
+        </dependency>
         <dependency>
             <groupId>com.github.tomakehurst</groupId>
             <artifactId>wiremock</artifactId>

@@ -1,4 +1,4 @@
-package com.turnitin.dao;
+package com.turnitin.__temp_lower__.dao;
 
 import com.turnitin.commons.db.dynamo.Persistable;
 import lombok.AllArgsConstructor;
