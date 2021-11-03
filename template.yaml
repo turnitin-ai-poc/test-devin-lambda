@@ -1,0 +1,93 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: 'Example of a Lambda responding to HTTP requests
+
+  '
+Globals:
+  # More info about Globals: https://github.com/awslabs/serverless-application-model/blob/master/docs/globals.rst
+  Function:
+    MemorySize: 1536
+    Runtime: java11
+    Timeout: 30
+
+Resources:
+  _Temp_Function:
+    # More info about Function Resource: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: _temp_-api/target/_temp_-api-1.0.0.jar
+      Handler: com.turnitin._Temp_
+      Events:
+        _Temp_HelloApi:
+          Type: Api
+          Properties:
+            Path: /hello
+            Method: GET
+  _Temp_DynamoGetFunction:
+    # More info about Function Resource: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: _temp_-api/target/_temp_-api-1.0.0.jar
+      Handler: com.turnitin._Temp_DynamoGet
+      Environment:
+        # More info about Env Vars: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#environment-object
+        Variables:
+          dynamo_table:
+            Ref: _Temp_Table01
+      Policies:
+      - DynamoDBCrudPolicy:
+          TableName:
+            Ref: _Temp_Table01
+      Events:
+        _Temp_DynamoGetApi:
+          Type: Api
+          Properties:
+            Path: /dynamo/{dbkey}
+            Method: GET
+  _Temp_DynamoPostFunction:
+    # More info about Function Resource: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: _temp_-api/target/_temp_-api-1.0.0.jar
+      Handler: com.turnitin._Temp_DynamoPost
+      Environment:
+        # More info about Env Vars: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#environment-object
+        Variables:
+          dynamo_table:
+            Ref: _Temp_Table01
+      Policies:
+        - DynamoDBCrudPolicy:
+            TableName:
+              Ref: _Temp_Table01
+      Events:
+        _Temp_DyanmpPostApi:
+          Type: Api
+          Properties:
+            Path: /dynamo/{dbkey}/{value}
+            Method: POST
+  _Temp_Table01:
+    Type: AWS::DynamoDB::Table
+    Properties:
+      TableName: _Temp_Table01
+      BillingMode: PAY_PER_REQUEST
+      AttributeDefinitions:
+      - AttributeName: pk
+        AttributeType: S
+      - AttributeName: sk
+        AttributeType: S
+      KeySchema:
+      - AttributeName: pk
+        KeyType: HASH
+      - AttributeName: sk
+        KeyType: RANGE
+
+# Metadata:
+  # https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/metadata-section-structure.html
+# Parameters:
+  # https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/parameters-section-structure.html
+# Mappings:
+  # https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/mappings-section-structure.html
+# Conditions:
+  # https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/conditions-section-structure.html
+# Outputs:
+  # https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/outputs-section-structure.html

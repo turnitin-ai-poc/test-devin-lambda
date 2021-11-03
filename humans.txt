@@ -1,0 +1,10 @@
+/* TEAM */
+        Evangelist: Phillip Winn
+        Email: pwinn@turnitin.com
+        Slack: @Phillip Winn
+        Geo: Plano, Texas, USA
+
+/* THANKS */
+        To: Konrad Kostrzewa
+        aka: Panda
+        For: Getting this started!

@@ -1,0 +1,20 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <name>_Temp_ Core</name>
+
+    <artifactId>_temp_-core</artifactId>
+    <version>${revision}</version>
+    <packaging>jar</packaging>
+
+    <parent>
+        <artifactId>_temp_</artifactId>
+        <groupId>com.turnitin</groupId>
+        <version>1.0.0</version>
+    </parent>
+
+    <properties>
+        <revision>1.0.0</revision>
+    </properties>
+</project>
