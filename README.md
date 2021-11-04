@@ -12,7 +12,7 @@ Have working AWS credentials for DEV001, either `default` or env var `AWS_PROFIL
 
 1. `mvn clean package` to build the Maven multi-module project
 2. `sam deploy` to deploy to DEV001
-3. `sam local start-api` will run the code locally
+3. `sam local start-api` will run the code lcally
 
 To "un-deploy" a stack from the AWS dev environment, run `aws cloudformation delete-stack --stack-name <stackname>`
 
@@ -24,8 +24,8 @@ to create the required DynamoDB table in DEV001.
 This project contains source code and supporting files for a serverless application that you can deploy with the AWS SAM
 CLI. It includes the following files and folders:
 
-- __temp_skerwer__-api/src/main - Code for two Lambda functions, including log configuration.
-- __temp_skerwer__-core/ - Shared code (DB objects) and resources (log config).
+- __temp_skewer__-api/src/main - Code for two Lambda functions, including log configuration.
+- __temp_skewer__-core/ - Shared code (DB objects) and resources (log config).
 - pom.xml - Defines this multi-module Maven project with the two modules above.
 - samconfig.xml - SAM config for deployments.
 - template.yaml - SAM template that defines resources for these functions.
@@ -42,14 +42,14 @@ are for writing to and reading from DynamoDB
 
 This code has three entry points configured:
 
-1. `__temp_skerwer__-api/src/main/java/com/turnitin/__temp_lower__/__temp_title__Get` This entry point is for handling regular HTTP requests.
-2. `__temp_skerwer__-api/src/main/java/com/turnitin/__temp_lower__/__temp_title__DynamoGet` This entry point is an example of handling HTTP requests which reads data from DynamoDB.
-3. `__temp_skerwer__-api/src/main/java/com/turnitin/__temp_lower__/__temp_title__DynamoPost` This entry point is an example of handling HTTP requests which writes data from DynamoDB.
+1. `__temp_skewer__-api/src/main/java/com/turnitin/__temp_lower__/__temp_title__Get` This entry point is for handling regular HTTP requests.
+2. `__temp_skewer__-api/src/main/java/com/turnitin/__temp_lower__/__temp_title__DynamoGet` This entry point is an example of handling HTTP requests which reads data from DynamoDB.
+3. `__temp_skewer__-api/src/main/java/com/turnitin/__temp_lower__/__temp_title__DynamoPost` This entry point is an example of handling HTTP requests which writes data from DynamoDB.
 
 Based on your use case you should delete the one you don't need/want.  To do so, remove the unwanted entry point from the code and from the `template.yaml`.  
 
 **Note:** The Dynamo entry point uses the schema which is defined in `template.yaml` as ` __temp_title__Table01`. Should your use case not need
-DynamoDB remove the two entry poins from the code, as well as the package `__temp_skerwer__-core/src/main/java/com/turnitin/__title_lower__/dao`. The remove the entrypoints and the table from the `template.yaml` 
+DynamoDB remove the two entry poins from the code, as well as the package `__temp_skewer__-core/src/main/java/com/turnitin/__temp_lower__/dao`. The remove the entrypoints and the table from the `template.yaml` 
 as well as the dependency from the `pom.xml` in order to reduce your package size. 
 
 # Dependencies
