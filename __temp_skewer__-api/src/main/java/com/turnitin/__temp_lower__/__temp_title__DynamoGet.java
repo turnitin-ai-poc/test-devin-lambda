@@ -1,5 +1,6 @@
 package com.turnitin.__temp_lower__;
 
+import com.turnitin.commons.TurnitinContext;
 import com.turnitin.commons.TurnitinContextCustomizer;
 import com.turnitin.commons.db.dyanmo.Dao;
 import com.turnitin.commons.lambda.ApiGatewayLambda;
@@ -16,11 +17,17 @@ public class __temp_title__DynamoGet extends ApiGatewayLambda<List<SimpleRecord>
 
 	private final Dao dao;
 
+	// This constructor is for regular flow
 	public __temp_title__DynamoGet() {
 		this.ctx = TurnitinContextCustomizer.customizeInstance()
 				.addEnvironmentVariable(DYNAMO_TABLE)
 				.getInstance();
 		this.dao = new Dao(ctx.getVariable(DYNAMO_TABLE));
+	}
+
+	// This Constructor is use in tests if you want to mock the context or parts there of.
+	public __temp_title__DynamoGet(TurnitinContext ctx) {
+		this.ctx = ctx;
 	}
 
 	@Override
