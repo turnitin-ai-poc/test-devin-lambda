@@ -15,9 +15,9 @@ class __temp_title__Test {
 	void testWithNoInput() {
 		final APIGatewayProxyRequestEvent event = new APIGatewayProxyRequestEvent();
 		final Context context = new TestContext();
-		final _temp_title__Get lambda = new _temp_title__Get();
+		final __temp_title__Get lambda = new __temp_title__Get();
 		final APIGatewayProxyResponseEvent response = lambda.handleRequest(event, context);
-		assertThat(response.getStatusCode()).isEqualTo(HttpStatus.SC_BAD_REQUEST);
+		assertThat(response.getStatusCode()).isEqualTo(HttpStatus.SC_METHOD_NOT_ALLOWED);
 	}
 
 	@Test
@@ -25,7 +25,7 @@ class __temp_title__Test {
 		final APIGatewayProxyRequestEvent event = EventLoader.loadEvent("APIGatewayRequestEvent-hello.json",
 				APIGatewayProxyRequestEvent.class);
 		final Context context = new TestContext();
-		final _temp_title__Get lambda = new _temp_title__Get();
+		final __temp_title__Get lambda = new __temp_title__Get();
 		final APIGatewayProxyResponseEvent response = lambda.handleRequest(event, context);
 		assertThat(response.getStatusCode()).isEqualTo(HttpStatus.SC_OK);
 	}

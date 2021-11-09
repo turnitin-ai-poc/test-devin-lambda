@@ -14,15 +14,11 @@
         <version>${revision}</version>
     </parent>
 
-    <properties>
-        <revision>1.0.0</revision>
-    </properties>
-
     <dependencies>
         <dependency>
             <groupId>com.turnitin</groupId>
             <artifactId>__temp_skewer__-core</artifactId>
-            <version>${project.version}</version>
+            <version>${revision}</version>
         </dependency>
     </dependencies>
 
