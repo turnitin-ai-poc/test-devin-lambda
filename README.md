@@ -11,8 +11,8 @@ However, if you're trying to create a new lambda, this repo should be cloned usi
 Have working AWS credentials for DEV001, either `default` or env var `AWS_PROFILE` points to them
 
 1. `mvn clean package` to build the Maven multi-module project
-2. `sam deploy` to deploy to DEV001
-3. `sam local start-api` will run the code lcally
+2. `sam local start-api` will run the code locally
+3. `sam deploy` to deploy to DEV001
 
 To "un-deploy" a stack from the AWS dev environment, run `aws cloudformation delete-stack --stack-name <stackname>`
 
