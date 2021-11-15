@@ -2,7 +2,7 @@
 
 :tada: First and foremost, thank you for taking the time to contribute! :tada:
 
-The Koala templates exist to make creating lambdas easier for all developers, and part of that involves some guidelines
+The TRA templates exist to make creating lambdas easier for all developers, and part of that involves some guidelines
 for how things ought to work. Some are based on hard-learned lessons and experience, while others are somewhat arbitrary
 for the sake of consistency. Please don't assume these are all hard and fast rules that shouldn't be questioned! But at
 the same time, if you want to do things differently, please reach out and talk about why.
@@ -15,7 +15,7 @@ code. Alternatively, I can be reached directly on Slack as `@Phillip Winn`, or v
 
 ## Getting Started
 
-The key to the Panda templates is that they can be built and tested directly using `mvn clean package` in a directory
+The key to the TRA templates is that they can be built and tested directly using `mvn clean package` in a directory
 with a `pom.xml` file. Usually this is
 `_temp_` or some variation on that. This should make it easier to make changes to than many templates which require a
 generation step before they'll compile.
@@ -52,14 +52,14 @@ This repo is *mirrored* in both GitHub Enterprise and BitBucket until such a tim
 repository.  Therefore it is extremely important that when making contributions they be made to both repositories.  This can
 be done quite easily with these steps:
 
-    > git clone git@bitbucket.org:examsoft/koala-template-lambda-http.git
-    > cd koala-template-lambda-http
-    > git remote set-url --add --push origin git@bitbucket.org:examsoft/koala-template-lambda-http.git
-    > git remote set-url --add --push origin git@ghe.iparadigms.com:AppOps/koala-template-lambda-http.git
+    > git clone git@bitbucket.org:examsoft/tra-template-lambda-http.git
+    > cd tra-template-lambda-http
+    > git remote set-url --add --push origin git@bitbucket.org:examsoft/tra-template-lambda-http.git
+    > git remote set-url --add --push origin git@ghe.iparadigms.com:AppOps/tra-template-lambda-http.git
 
 You can verify you did everything correctly as follows:
 
     > git remote -v
-    origin	git@bitbucket.org:examsoft/koala-template-lambda-http.git (fetch)
-    origin	git@ghe.iparadigms.com:AppOps/koala-template-lambda-http.git (push)
-    origin	git@bitbucket.org:examsoft/koala-template-lambda-http.git (push)
+    origin	git@bitbucket.org:examsoft/tra-template-lambda-http.git (fetch)
+    origin	git@ghe.iparadigms.com:AppOps/tra-template-lambda-http.git (push)
+    origin	git@bitbucket.org:examsoft/tra-template-lambda-http.git (push)
