@@ -9,9 +9,8 @@ the same time, if you want to do things differently, please reach out and talk a
 
 ## Questions, Comments, Concerns
 
-The Slack channel `#serverless-reference-architecture` is a good place to reach people who knows something about this
-code. Alternatively, I can be reached directly on Slack as `@Phillip Winn`, or via email at
-`pwinn@turnitin.com`.
+The Slack channel `#tra-templates` is a good place to reach people who knows something about this
+code. Alternatively, we can be reached directly on Slack as `@Phillip Winn`, `@Beth Stevens`, or `@Marco Romanini`.
 
 ## Getting Started
 
@@ -26,19 +25,17 @@ of choice isn't excluded, please update
 
 Some information about each template is included in the README.md files for the template, while additional information
 about the project can be found on Confluence
-as [Serverless with Panda Templates](https://turnitin.atlassian.net/wiki/spaces/refarch/pages/17878614061/Serverless+with+Panda+Templates)
+as [TRA Templates](https://turnitin.atlassian.net/wiki/spaces/refarch/pages/94080598036/TRA+Templates)
 
 ## How Can I Contribute?
 
 ### Reporting a Bug
 
-For now, tag `@Phillip Winn` in the `#serverless-reference-architecture` Slack channel. We will need to refine this
-process so that it scales!
+Post in the `#tra-templates` Slack channel. We will need to refine this process so that it scales!
 
 ### Suggesting a Feature/Enhancement
 
-For now, tag `@Phillip Winn` in the `#serverless-reference-architecture` Slack channel. We will need to refine this
-process so that it scales!
+Post in the `#tra-templates` Slack channel. We will need to refine this process so that it scales!
 
 ### Contributing Code
 
