@@ -10,7 +10,7 @@
 
     <parent>
         <artifactId>__temp_skewer__</artifactId>
-        <groupId>com.turnitin</groupId>
+        <groupId>com.turnitin.__temp_lower__</groupId>
         <version>${revision}</version>
     </parent>
 

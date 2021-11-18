@@ -4,7 +4,7 @@
 
     <name>__temp__</name>
 
-    <groupId>com.turnitin</groupId>
+    <groupId>com.turnitin.__temp_lower__</groupId>
     <artifactId>__temp_skewer__</artifactId>
     <version>${revision}</version>
     <packaging>pom</packaging>
