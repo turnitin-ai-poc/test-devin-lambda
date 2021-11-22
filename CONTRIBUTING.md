@@ -49,14 +49,14 @@ This repo is *mirrored* in both GitHub Enterprise and BitBucket until such a tim
 repository.  Therefore it is extremely important that when making contributions they be made to both repositories.  This can
 be done quite easily with these steps:
 
-    > git clone git@bitbucket.org:examsoft/tra-template-lambda-http.git
+    > git clone git@bitbucket.org:examsoft/tra-template-lambda-http-java.git
     > cd tra-template-lambda-http
-    > git remote set-url --add --push origin git@bitbucket.org:examsoft/tra-template-lambda-http.git
-    > git remote set-url --add --push origin git@ghe.iparadigms.com:AppOps/tra-template-lambda-http.git
+    > git remote set-url --add --push origin git@bitbucket.org:examsoft/tra-template-lambda-http-java.git
+    > git remote set-url --add --push origin git@ghe.iparadigms.com:AppOps/tra-template-lambda-http-java.git
 
 You can verify you did everything correctly as follows:
 
     > git remote -v
-    origin	git@bitbucket.org:examsoft/tra-template-lambda-http.git (fetch)
-    origin	git@ghe.iparadigms.com:AppOps/tra-template-lambda-http.git (push)
-    origin	git@bitbucket.org:examsoft/tra-template-lambda-http.git (push)
+    origin	git@bitbucket.org:examsoft/tra-template-lambda-http-java.git (fetch)
+    origin	git@ghe.iparadigms.com:AppOps/tra-template-lambda-http-java.git (push)
+    origin	git@bitbucket.org:examsoft/tra-template-lambda-http-java.git (push)
