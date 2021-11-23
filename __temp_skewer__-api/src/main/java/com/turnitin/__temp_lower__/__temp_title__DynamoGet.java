@@ -19,9 +19,9 @@ public class __temp_title__DynamoGet extends ApiGatewayLambda<List<SimpleRecord>
 
 	// This constructor is for regular flow
 	public __temp_title__DynamoGet() {
-		this.ctx = TurnitinContextCustomizer.customizeInstance()
+		this.ctx = TurnitinContext.builder()
 				.addEnvironmentVariable(DYNAMO_TABLE)
-				.getInstance();
+				.build();
 		this.dao = new Dao(ctx.getVariable(DYNAMO_TABLE));
 	}
 

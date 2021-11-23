@@ -12,22 +12,24 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class __temp_title__Get extends ApiGatewayLambda<Hello> {
 
-    private __temp_title__Service __temp_lower__service = new __temp_title__Service();
+    private __temp_title__Service __temp_lower__service;
 
     // This constructor is for regular flow
     public __temp_title__Get() {
         this.ctx = TurnitinContext.builder().build();
+        this.__temp_lower__service = new __temp_title__Service(ctx);
     }
 
     // This Constructor is use in tests if you want to mock the context or parts there of.
     public __temp_title__Get(TurnitinContext ctx) {
         this.ctx = ctx;
+        this.__temp_lower__service = new __temp_title__Service(ctx);
     }
 
     @Override
     protected Hello handleMethod() throws Exception {
         String who = ctx.getKeyFromPathParams(input, "who");
-        return __temp_lower__service.doHello(ctx, who);
+        return __temp_lower__service.doHello(who);
     }
 
     @Override
