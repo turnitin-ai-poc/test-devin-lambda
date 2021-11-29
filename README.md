@@ -3,7 +3,7 @@
 If you want to make changes to this template, then yes, clone this, make changes, and create a pull request, but please be sure to follow the [Contributing](./CONTRIBUTING.md) instructions.
 
 However, if you're trying to create a new lambda, this repo should be cloned using the `project_generator.py` script found in
-[GitHub Enterprise](https://ghe.iparadigms.com/AppOps/project-generator.git) and [BitBucket](https://mromanini@bitbucket.org/examsoft/project-generator.git). Once that's done, the below applies.
+[GitHub Enterprise](https://ghe.iparadigms.com/AppOps/project-generator.git) and [BitBucket](https://bitbucket.org/examsoft/tra-project-generator/src/master/). Once that's done, the below applies.
 
 
 # __temp_title__ QuickStart
@@ -58,3 +58,4 @@ The TurnitinContext gives you an easy way to access various services (AWS as wel
 TurnitinContextCustomizer. However, in order to keep the final package as small possible the dependencies are commented out in the root `pom.xml`.  Therefore, when you
 add a dependency make sure you also uncomment it in the `pom.xml`.  Failure to do so will of course result in the runtime exception `ClassNotFoundException`.  For the sake
 of load times do not just uncomment all the dependencies or this will bloat your package and will slow down performance of your lambda and cost more to run.
+
