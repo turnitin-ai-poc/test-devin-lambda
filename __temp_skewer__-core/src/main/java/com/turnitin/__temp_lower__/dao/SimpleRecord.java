@@ -3,31 +3,76 @@ package com.turnitin.__temp_lower__.dao;
 import com.turnitin.commons.db.dynamo.Persistable;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
-import lombok.Getter;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
 import lombok.ToString;
+import software.amazon.awssdk.enhanced.dynamodb.mapper.annotations.DynamoDbBean;
+import software.amazon.awssdk.enhanced.dynamodb.mapper.annotations.DynamoDbPartitionKey;
+import software.amazon.awssdk.enhanced.dynamodb.mapper.annotations.DynamoDbSortKey;
 
-@Getter
-@Setter
+
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString
-public class SimpleRecord implements Persistable {
-    @DynamoDBHashKey(attributeName = "pk")
-    private String pk;
-    @DynamoDBRangeKey(attributeName = "sk")
-    private String sk;
+@DynamoDbBean
+public class SimpleRecord implements Persistable{
+   private String pk;
+   private String sk;
+   private long created;
+   private String type;
+   private String subType;
+   private String data;
 
-    @DynamoDBAttribute(attributeName = "type")
-    private String type;
-    @DynamoDBAttribute(attributeName = "subType")
-    private String subType;
+   @DynamoDbPartitionKey
+   public String getPk() {
+      return this.pk;
+   }
 
-    @DynamoDBAttribute(attributeName = "created")
-    private long created;
+   public void setPk(String pk) {
+      this.pk = pk;
+   }
 
-    @DynamoDBAttribute(attributeName = "data")
-    private String data;
+   @DynamoDbSortKey
+   public String getSk() {
+      return this.sk;
+   }
+
+   public void setSk(String sk) {
+      this.sk = sk;
+   }
+
+   public long getCreated() {
+      return created;
+   }
+
+   @Override
+   public void setCreated(long created) {
+      this.created = created;
+   }
+
+   public String getType() {
+      return this.type;
+   }
+
+   public void setType(String type) {
+      this.type = type;
+   }
+
+   public String getSubType() {
+      return this.subType;
+   }
+
+   public void setSubType(String subType) {
+      this.subType = subType;
+   }
+
+   public String getData() {
+      return this.data;
+   }
+
+   public void setData(String data) {
+      this.data = data;
+   }
+
+
 }

@@ -1,14 +1,14 @@
 package com.turnitin.__temp_lower__;
 
-import com.turnitin.commons.TurnitinContext;
-import com.turnitin.commons.TurnitinContextCustomizer;
-import com.turnitin.commons.db.dyanmo.Dao;
-import com.turnitin.commons.lambda.ApiGatewayLambda;
 import com.turnitin.__temp_lower__.dao.SimpleRecord;
+import com.turnitin.commons.TurnitinContext;
+import com.turnitin.commons.db.dynamo.Dao;
+import com.turnitin.commons.lambda.ApiGatewayLambda;
+import lombok.extern.slf4j.Slf4j;
+
+import javax.ws.rs.HttpMethod;
 import java.util.Arrays;
 import java.util.List;
-import javax.ws.rs.HttpMethod;
-import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 public class __temp_title__DynamoPost extends ApiGatewayLambda<SimpleRecord> {
@@ -21,12 +21,13 @@ public class __temp_title__DynamoPost extends ApiGatewayLambda<SimpleRecord> {
 		this.ctx = TurnitinContext.builder()
 				.addEnvironmentVariable(DYNAMO_TABLE)
 				.build();
-		this.dao = new Dao(ctx.getVariable(DYNAMO_TABLE));
+		this.dao = new Dao(ctx.getVariable(DYNAMO_TABLE), SimpleRecord.class);
 	}
 
 	// This Constructor is use in tests if you want to mock the context or parts there of.
-	public __temp_title__DynamoPost(TurnitinContext ctx) {
+	public __temp_title__DynamoPost(TurnitinContext ctx, Dao mockedDao) {
 		this.ctx = ctx;
+		this.dao = mockedDao;
 	}
 
 	@Override
