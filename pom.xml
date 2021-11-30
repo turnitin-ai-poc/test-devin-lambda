@@ -15,12 +15,12 @@
     </modules>
 
     <properties>
-        <revision>1.0.1</revision>
+        <revision>1.0.0</revision>
 
         <maven.compiler.source>11</maven.compiler.source>
         <maven.compiler.target>11</maven.compiler.target>
 
-        <turnitin-commons.version>1.0.9-SNAPSHOT</turnitin-commons.version>
+        <turnitin-commons.version>1.0.9</turnitin-commons.version>
         <aws-java-sdk.version>1.11.475</aws-java-sdk.version>
         <aws-lambda-java-core.version>1.2.1</aws-lambda-java-core.version>
         <aws-lambda-java-events.version>3.10.0</aws-lambda-java-events.version>
