@@ -24,7 +24,7 @@ public class __temp_title__DynamoPost extends ApiGatewayLambda<SimpleRecord> {
 				.build();
 		this.dao = new Dao(ctx.getVariable(DYNAMO_TABLE), SimpleRecord.class);
 		// Optional: Invoking a simple api here to pre-warm the application
-		dao.findAllByPkAndSkPrefix("warmup", "warmup");
+		dao.findByPkAndSk("warmup", "warmup");
 	}
 
 	// This Constructor is use in tests if you want to mock the context or parts there of.
