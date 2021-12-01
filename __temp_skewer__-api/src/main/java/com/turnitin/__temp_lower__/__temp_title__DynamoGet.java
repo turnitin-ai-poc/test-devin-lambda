@@ -1,14 +1,12 @@
 package com.turnitin.__temp_lower__;
 
 import com.turnitin.commons.TurnitinContext;
-import com.turnitin.commons.TurnitinContextBuilder;
 import com.turnitin.commons.db.dynamo.Dao;
 import com.turnitin.commons.lambda.ApiGatewayLambda;
 import com.turnitin.__temp_lower__.dao.SimpleRecord;
 
 import java.util.Arrays;
 import java.util.List;
-import java.util.stream.Collectors;
 import javax.ws.rs.HttpMethod;
 import lombok.extern.slf4j.Slf4j;
 
@@ -24,6 +22,8 @@ public class __temp_title__DynamoGet extends ApiGatewayLambda<List<SimpleRecord>
 				.addEnvironmentVariable(DYNAMO_TABLE)
 				.build();
 		this.dao = new Dao(ctx.getVariable(DYNAMO_TABLE), SimpleRecord.class);
+		// Optional: Invoking a simple api here to pre-warm the application
+		dao.findAllByPkAndSkPrefix("warmup", "warmup");
 	}
 
 	// This Constructor is use in tests if you want to mock the context or parts there of.

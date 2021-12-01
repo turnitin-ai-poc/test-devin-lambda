@@ -5,6 +5,7 @@ import com.turnitin.commons.TurnitinContext;
 import com.turnitin.commons.db.dynamo.Dao;
 import com.turnitin.commons.lambda.ApiGatewayLambda;
 import lombok.extern.slf4j.Slf4j;
+import software.amazon.awssdk.enhanced.dynamodb.Key;
 
 import javax.ws.rs.HttpMethod;
 import java.util.Arrays;
@@ -22,6 +23,8 @@ public class __temp_title__DynamoPost extends ApiGatewayLambda<SimpleRecord> {
 				.addEnvironmentVariable(DYNAMO_TABLE)
 				.build();
 		this.dao = new Dao(ctx.getVariable(DYNAMO_TABLE), SimpleRecord.class);
+		// Optional: Invoking a simple api here to pre-warm the application
+		dao.findAllByPkAndSkPrefix("warmup", "warmup");
 	}
 
 	// This Constructor is use in tests if you want to mock the context or parts there of.
