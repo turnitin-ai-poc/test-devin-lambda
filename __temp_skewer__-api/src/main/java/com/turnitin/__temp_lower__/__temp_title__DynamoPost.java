@@ -48,8 +48,6 @@ public class __temp_title__DynamoPost extends ApiGatewayLambda<SimpleRecord> {
 			SimpleRecord simpleRecord = SimpleRecord.builder()
 					.pk(dbkey)
 					.sk(value)
-					.type("type")
-					.subType("subtype")
 					.created(System.currentTimeMillis())
 					.data(body)
 					.build();

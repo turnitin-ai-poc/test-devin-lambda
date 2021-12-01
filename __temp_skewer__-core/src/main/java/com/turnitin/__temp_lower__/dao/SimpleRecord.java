@@ -19,8 +19,6 @@ public class SimpleRecord implements Persistable{
    private String pk;
    private String sk;
    private long created;
-   private String type;
-   private String subType;
    private String data;
 
    @DynamoDbPartitionKey
@@ -48,22 +46,6 @@ public class SimpleRecord implements Persistable{
    @Override
    public void setCreated(long created) {
       this.created = created;
-   }
-
-   public String getType() {
-      return this.type;
-   }
-
-   public void setType(String type) {
-      this.type = type;
-   }
-
-   public String getSubType() {
-      return this.subType;
-   }
-
-   public void setSubType(String subType) {
-      this.subType = subType;
    }
 
    public String getData() {
