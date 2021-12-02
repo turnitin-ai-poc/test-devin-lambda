@@ -33,11 +33,11 @@ CLI. It includes the following files and folders:
 
 This example sets up two ApiGateway Lambdas:
 
-http://127.0.0.1:3000/hello [GET] is a simple Hello, World lambda
+http://127.0.0.1:3000/hello/{name} [GET] is a simple Hello, World lambda
 
-http://127.0.0.1:3000/crud/{dbkey}/{value} [POST]
+http://127.0.0.1:3000/dynamo/{dbkey}/{value} [POST]
 and
-http://127.0.0.1:3000/crud/{dbkey} [GET]
+http://127.0.0.1:3000/dynamo/{dbkey} [GET]
 are for writing to and reading from DynamoDB 
 
 This code has three entry points configured:
