@@ -1,13 +1,12 @@
 package com.turnitin.__temp_lower__;
 
+import com.turnitin.__temp_lower__.dao.SimpleRecord;
 import com.turnitin.commons.TurnitinContext;
 import com.turnitin.commons.db.dynamo.Dao;
+import com.turnitin.commons.http.HttpMethod;
 import com.turnitin.commons.lambda.ApiGatewayLambda;
-import com.turnitin.__temp_lower__.dao.SimpleRecord;
-
 import java.util.Arrays;
 import java.util.List;
-import javax.ws.rs.HttpMethod;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
@@ -50,7 +49,7 @@ public class __temp_title__DynamoGet extends ApiGatewayLambda<List<SimpleRecord>
 
 	@Override
 	protected List<String> getSupportedHttpMethods() {
-		return Arrays.asList(HttpMethod.GET);
+		return Arrays.asList(HttpMethod.GET.name());
 	}
 
 

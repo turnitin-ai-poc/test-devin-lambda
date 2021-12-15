@@ -3,13 +3,11 @@ package com.turnitin.__temp_lower__;
 import com.turnitin.__temp_lower__.dao.SimpleRecord;
 import com.turnitin.commons.TurnitinContext;
 import com.turnitin.commons.db.dynamo.Dao;
+import com.turnitin.commons.http.HttpMethod;
 import com.turnitin.commons.lambda.ApiGatewayLambda;
-import lombok.extern.slf4j.Slf4j;
-import software.amazon.awssdk.enhanced.dynamodb.Key;
-
-import javax.ws.rs.HttpMethod;
 import java.util.Arrays;
 import java.util.List;
+import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 public class __temp_title__DynamoPost extends ApiGatewayLambda<SimpleRecord> {
@@ -60,7 +58,7 @@ public class __temp_title__DynamoPost extends ApiGatewayLambda<SimpleRecord> {
 
 	@Override
 	protected List<String> getSupportedHttpMethods() {
-		return Arrays.asList(HttpMethod.POST);
+		return Arrays.asList(HttpMethod.POST.name());
 	}
 
 
