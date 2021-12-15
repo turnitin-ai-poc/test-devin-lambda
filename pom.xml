@@ -125,11 +125,11 @@
 <!--            <groupId>software.amazon.awssdk</groupId>-->
 <!--            <artifactId>s3</artifactId>-->
 <!--        </dependency>-->
-        <dependency>
-            <groupId>com.turnitin.panda</groupId>
-            <artifactId>panda-client</artifactId>
-            <version>1.0.4-SNAPSHOT</version>
-        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>com.turnitin.panda</groupId>-->
+<!--            <artifactId>panda-client</artifactId>-->
+<!--            <version>1.0.4</version>-->
+<!--        </dependency>-->
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
