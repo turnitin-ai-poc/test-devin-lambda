@@ -117,6 +117,11 @@
                 </exclusion>
             </exclusions>
         </dependency>
+        <dependency>
+            <groupId>com.turnitin.panda</groupId>
+            <artifactId>panda-client</artifactId>
+            <version>1.0.5-SNAPSHOT</version>
+        </dependency>
 <!--        <dependency>-->
 <!--            <groupId>software.amazon.awssdk</groupId>-->
 <!--            <artifactId>sqs</artifactId>-->
@@ -126,9 +131,8 @@
 <!--            <artifactId>s3</artifactId>-->
 <!--        </dependency>-->
 <!--        <dependency>-->
-<!--            <groupId>com.turnitin.panda</groupId>-->
-<!--            <artifactId>panda-client</artifactId>-->
-<!--            <version>1.0.4</version>-->
+<!--            <groupId>software.amazon.awssdk</groupId>-->
+<!--            <artifactId>sns</artifactId>-->
 <!--        </dependency>-->
         <dependency>
             <groupId>org.projectlombok</groupId>
