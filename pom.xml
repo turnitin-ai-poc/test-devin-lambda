@@ -20,12 +20,12 @@
         <maven.compiler.source>11</maven.compiler.source>
         <maven.compiler.target>11</maven.compiler.target>
 
-        <turnitin-commons.version>1.0.14</turnitin-commons.version>
+        <turnitin-commons.version>1.0.16</turnitin-commons.version>
         <aws-java-sdk.version>2.17.75</aws-java-sdk.version>
         <aws-lambda-java-log4j2.version>1.4.0</aws-lambda-java-log4j2.version>
         <lombok.version>1.18.22</lombok.version>
         <junit.version>5.4.0</junit.version>
-        <log4j.version>2.16.0</log4j.version>
+        <log4j.version>2.17.1</log4j.version>
         <mockito.version>2.24.5</mockito.version>
 
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -241,20 +241,6 @@
             <snapshots>
                 <enabled>false</enabled>
             </snapshots>
-            <id>central</id>
-            <name>libs-release</name>
-            <url>https://artifactory.examsoft.com:443/artifactory/libs-release</url>
-        </repository>
-        <repository>
-            <snapshots />
-            <id>snapshots</id>
-            <name>libs-snapshot</name>
-            <url>https://artifactory.examsoft.com:443/artifactory/libs-snapshot</url>
-        </repository>
-        <repository>
-            <snapshots>
-                <enabled>false</enabled>
-            </snapshots>
             <id>tii-central</id>
             <name>libs-release</name>
             <url>https://artifactory.turnitin.com:443/artifactory/libs-release</url>
@@ -265,22 +251,22 @@
             <name>libs-snapshot</name>
             <url>https://artifactory.turnitin.com:443/artifactory/libs-snapshot</url>
         </repository>
-    </repositories>
-    <pluginRepositories>
-        <pluginRepository>
+        <repository>
             <snapshots>
                 <enabled>false</enabled>
             </snapshots>
             <id>central</id>
-            <name>plugins-release</name>
-            <url>https://artifactory.examsoft.com:443/artifactory/plugins-release</url>
-        </pluginRepository>
-        <pluginRepository>
+            <name>libs-release</name>
+            <url>https://artifactory.examsoft.com:443/artifactory/libs-release</url>
+        </repository>
+        <repository>
             <snapshots />
             <id>snapshots</id>
-            <name>plugins-snapshot</name>
-            <url>https://artifactory.examsoft.com:443/artifactory/plugins-snapshot</url>
-        </pluginRepository>
+            <name>libs-snapshot</name>
+            <url>https://artifactory.examsoft.com:443/artifactory/libs-snapshot</url>
+        </repository>
+    </repositories>
+    <pluginRepositories>
         <pluginRepository>
             <snapshots>
                 <enabled>false</enabled>
@@ -294,6 +280,20 @@
             <id>tii-snapshots</id>
             <name>plugins-snapshot</name>
             <url>https://artifactory.turnitin.com:443/artifactory/plugins-snapshot</url>
+        </pluginRepository>
+        <pluginRepository>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+            <id>central</id>
+            <name>plugins-release</name>
+            <url>https://artifactory.examsoft.com:443/artifactory/plugins-release</url>
+        </pluginRepository>
+        <pluginRepository>
+            <snapshots />
+            <id>snapshots</id>
+            <name>plugins-snapshot</name>
+            <url>https://artifactory.examsoft.com:443/artifactory/plugins-snapshot</url>
         </pluginRepository>
     </pluginRepositories>
 
