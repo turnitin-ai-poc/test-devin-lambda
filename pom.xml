@@ -20,7 +20,7 @@
         <maven.compiler.source>11</maven.compiler.source>
         <maven.compiler.target>11</maven.compiler.target>
 
-        <turnitin-commons.version>1.0.16</turnitin-commons.version>
+        <turnitin-commons.version>1.0.18</turnitin-commons.version>
         <aws-java-sdk.version>2.17.75</aws-java-sdk.version>
         <aws-lambda-java-log4j2.version>1.5.1</aws-lambda-java-log4j2.version>
         <lombok.version>1.18.22</lombok.version>
@@ -76,52 +76,18 @@
         <dependency>
             <groupId>software.amazon.awssdk</groupId>
             <artifactId>dynamodb-enhanced</artifactId>
-            <exclusions>
-                <exclusion>
-                    <groupId>software.amazon.awssdk</groupId>
-                    <artifactId>netty-nio-client</artifactId>
-                </exclusion>
-                <exclusion>
-                    <groupId>software.amazon.awssdk</groupId>
-                    <artifactId>url-connection-client</artifactId>
-                </exclusion>
-                <exclusion>
-                    <!-- explicitly included elsewhere, not needed here -->
-                    <groupId>org.slf4j</groupId>
-                    <artifactId>slf4j-api</artifactId>
-                </exclusion>
-            </exclusions>
         </dependency>
         <!-- used by the dynamodb-enhanced library -->
         <!-- If you comment out the dynamodb-enhanced library, comment this out also -->
         <dependency>
             <groupId>software.amazon.awssdk</groupId>
             <artifactId>apache-client</artifactId>
-            <exclusions>
-                <exclusion>
-                    <groupId>software.amazon.awssdk</groupId>
-                    <artifactId>http-client-spi</artifactId>
-                </exclusion>
-                <exclusion>
-                    <groupId>software.amazon.awssdk</groupId>
-                    <artifactId>utils</artifactId>
-                </exclusion>
-                <exclusion>
-                    <groupId>software.amazon.awssdk</groupId>
-                    <artifactId>annotations</artifactId>
-                </exclusion>
-                <exclusion>
-                    <!-- explicitly included elsewhere, not needed here -->
-                    <groupId>org.apache.httpcomponents</groupId>
-                    <artifactId>httpcore</artifactId>
-                </exclusion>
-            </exclusions>
         </dependency>
-        <dependency>
-            <groupId>com.turnitin.panda</groupId>
-            <artifactId>panda-client</artifactId>
-            <version>1.0.5-SNAPSHOT</version>
-        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>com.turnitin.panda</groupId>-->
+<!--            <artifactId>panda-client</artifactId>-->
+<!--            <version>1.0.5</version>-->
+<!--        </dependency>-->
 <!--        <dependency>-->
 <!--            <groupId>software.amazon.awssdk</groupId>-->
 <!--            <artifactId>sqs</artifactId>-->
@@ -236,6 +202,24 @@
                 <configuration>
                     <forceCreation>true</forceCreation>
                 </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-enforcer-plugin</artifactId>
+                <version>3.0.0-M3</version>
+                <executions>
+                    <execution>
+                        <id>enforce-banned-dependencies</id>
+                        <goals>
+                            <goal>enforce</goal>
+                        </goals>
+                        <configuration>
+                            <rules>
+                                <banDuplicatePomDependencyVersions/>
+                            </rules>
+                        </configuration>
+                    </execution>
+                </executions>
             </plugin>
         </plugins>
     </build>
