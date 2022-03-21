@@ -15,7 +15,7 @@ Resources:
     # More info about Function Resource: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
     Type: AWS::Serverless::Function
     Properties:
-      CodeUri: __temp_skewer__-api/target/__temp_skewer__-api-1.0.0.jar
+      CodeUri: __temp_skewer__-api/target/__temp_skewer__-api-1.0.0.zip
       Handler: com.turnitin.__temp_lower__.__temp_title__Get
       Events:
         __temp_title__HelloApi:
@@ -27,7 +27,7 @@ Resources:
     # More info about Function Resource: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
     Type: AWS::Serverless::Function
     Properties:
-      CodeUri: __temp_skewer__-api/target/__temp_skewer__-api-1.0.0.jar
+      CodeUri: __temp_skewer__-api/target/__temp_skewer__-api-1.0.0.zip
       Handler: com.turnitin.__temp_lower__.__temp_title__DynamoGet
       Environment:
         # More info about Env Vars: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#environment-object
@@ -48,7 +48,7 @@ Resources:
     # More info about Function Resource: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
     Type: AWS::Serverless::Function
     Properties:
-      CodeUri: __temp_skewer__-api/target/__temp_skewer__-api-1.0.0.jar
+      CodeUri: __temp_skewer__-api/target/__temp_skewer__-api-1.0.0.zip
       Handler: com.turnitin.__temp_lower__.__temp_title__DynamoPost
       Environment:
         # More info about Env Vars: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#environment-object
