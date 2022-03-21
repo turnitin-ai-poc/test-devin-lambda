@@ -9,6 +9,12 @@ Globals:
     MemorySize: 1536
     Runtime: java11
     Timeout: 30
+  Api:
+    Cors:
+      AllowMethods: "'GET,PUT,POST,DELETE,OPTIONS'"
+      AllowHeaders: "'Content-Type,X-Amz-Date,Authorization,X-Api-Key'"
+      AllowOrigin: "'*'"
+      AllowCredentials: "'*'"
 
 Resources:
   __temp_title__Function:
