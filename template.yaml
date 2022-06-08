@@ -4,96 +4,96 @@ Description: 'Example of a Lambda responding to HTTP requests
 
   '
 Globals:
-  # More info about Globals: https://github.com/awslabs/serverless-application-model/blob/master/docs/globals.rst
-  Function:
-    MemorySize: 1536
-    Runtime: java11
-    Timeout: 30
-  Api:
-    Cors:
-      AllowMethods: "'GET,PUT,POST,DELETE,OPTIONS'"
-      AllowHeaders: "'Content-Type,X-Amz-Date,Authorization,X-Api-Key'"
-      AllowOrigin: "'*'"
-      AllowCredentials: "'*'"
+    # More info about Globals: https://github.com/awslabs/serverless-application-model/blob/master/docs/globals.rst
+    Function:
+        MemorySize: 1536
+        Runtime: java11
+        Timeout: 30
+    Api:
+        Cors:
+            AllowMethods: "'GET,PUT,POST,DELETE,OPTIONS'"
+            AllowHeaders: "'Content-Type,X-Amz-Date,Authorization,X-Api-Key'"
+            AllowOrigin: "'*'"
+            AllowCredentials: "'*'"
 
 Resources:
-  __temp_title__Function:
-    # More info about Function Resource: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
-    Type: AWS::Serverless::Function
-    Properties:
-      CodeUri: __temp_skewer__-api/target/__temp_skewer__-api-1.0.0.zip
-      Handler: com.turnitin.__temp_lower__.__temp_title__Get
-      Events:
-        __temp_title__HelloApi:
-          Type: Api
-          Properties:
-            Path: /hello/{who}
-            Method: GET
-  __temp_title__DynamoGetFunction:
-    # More info about Function Resource: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
-    Type: AWS::Serverless::Function
-    Properties:
-      CodeUri: __temp_skewer__-api/target/__temp_skewer__-api-1.0.0.zip
-      Handler: com.turnitin.__temp_lower__.__temp_title__DynamoGet
-      Environment:
-        # More info about Env Vars: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#environment-object
-        Variables:
-          dynamo_table:
-            Ref: __temp_title__Table01
-      Policies:
-      - DynamoDBCrudPolicy:
-          TableName:
-            Ref: __temp_title__Table01
-      Events:
-        __temp_title__DynamoGetApi:
-          Type: Api
-          Properties:
-            Path: /dynamo/{dbkey}
-            Method: GET
-  __temp_title__DynamoPostFunction:
-    # More info about Function Resource: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
-    Type: AWS::Serverless::Function
-    Properties:
-      CodeUri: __temp_skewer__-api/target/__temp_skewer__-api-1.0.0.zip
-      Handler: com.turnitin.__temp_lower__.__temp_title__DynamoPost
-      Environment:
-        # More info about Env Vars: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#environment-object
-        Variables:
-          dynamo_table:
-            Ref: __temp_title__Table01
-      Policies:
-        - DynamoDBCrudPolicy:
-            TableName:
-              Ref: __temp_title__Table01
-      Events:
-        __temp_title__DyanmpPostApi:
-          Type: Api
-          Properties:
-            Path: /dynamo/{dbkey}/{value}
-            Method: POST
-  __temp_title__Table01:
-    Type: AWS::DynamoDB::Table
-    Properties:
-      TableName: __temp_title__Table01
-      BillingMode: PAY_PER_REQUEST
-      AttributeDefinitions:
-      - AttributeName: pk
-        AttributeType: S
-      - AttributeName: sk
-        AttributeType: S
-      KeySchema:
-      - AttributeName: pk
-        KeyType: HASH
-      - AttributeName: sk
-        KeyType: RANGE
+    __temp_title__Function:
+        # More info about Function Resource: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
+        Type: AWS::Serverless::Function
+        Properties:
+            CodeUri: __temp_skewer__-api/target/__temp_skewer__-api-1.0.0.zip
+            Handler: com.turnitin.__temp_lower__.__temp_title__Get
+            Events:
+                __temp_title__HelloApi:
+                    Type: Api
+                    Properties:
+                        Path: /hello/{who}
+                        Method: GET
+    __temp_title__DynamoGetFunction:
+        # More info about Function Resource: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
+        Type: AWS::Serverless::Function
+        Properties:
+            CodeUri: __temp_skewer__-api/target/__temp_skewer__-api-1.0.0.zip
+            Handler: com.turnitin.__temp_lower__.__temp_title__DynamoGet
+            Environment:
+                # More info about Env Vars: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#environment-object
+                Variables:
+                    dynamo_table:
+                        Ref: __temp_title__Table01
+            Policies:
+                -   DynamoDBCrudPolicy:
+                      TableName:
+                          Ref: __temp_title__Table01
+            Events:
+                __temp_title__DynamoGetApi:
+                    Type: Api
+                    Properties:
+                        Path: /dynamo/{dbkey}
+                        Method: GET
+    __temp_title__DynamoPostFunction:
+        # More info about Function Resource: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
+        Type: AWS::Serverless::Function
+        Properties:
+            CodeUri: __temp_skewer__-api/target/__temp_skewer__-api-1.0.0.zip
+            Handler: com.turnitin.__temp_lower__.__temp_title__DynamoPost
+            Environment:
+                # More info about Env Vars: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#environment-object
+                Variables:
+                    dynamo_table:
+                        Ref: __temp_title__Table01
+            Policies:
+                -   DynamoDBCrudPolicy:
+                      TableName:
+                          Ref: __temp_title__Table01
+            Events:
+                __temp_title__DyanmpPostApi:
+                    Type: Api
+                    Properties:
+                        Path: /dynamo/{dbkey}/{value}
+                        Method: POST
+    __temp_title__Table01:
+        Type: AWS::DynamoDB::Table
+        Properties:
+            TableName: __temp_title__Table01
+            BillingMode: PAY_PER_REQUEST
+            AttributeDefinitions:
+                -   AttributeName: pk
+                    AttributeType: S
+                -   AttributeName: sk
+                    AttributeType: S
+            KeySchema:
+                -   AttributeName: pk
+                    KeyType: HASH
+                -   AttributeName: sk
+                    KeyType: RANGE
 
 # Metadata:
-  # https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/metadata-section-structure.html
+    # https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/metadata-section-structure.html
 # Parameters:
-  # https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/parameters-section-structure.html
+    # https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/parameters-section-structure.html
 # Mappings:
-  # https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/mappings-section-structure.html
+    # https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/mappings-section-structure.html
 # Conditions:
-  # https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/conditions-section-structure.html
+    # https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/conditions-section-structure.html
 # Outputs:
-  # https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/outputs-section-structure.html
+    # https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/outputs-section-structure.html
