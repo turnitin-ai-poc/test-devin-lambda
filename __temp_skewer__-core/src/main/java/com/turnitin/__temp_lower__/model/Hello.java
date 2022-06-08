@@ -9,5 +9,5 @@ import lombok.*;
 @ToString
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Hello {
-	private String response;
+    private String response;
 }
