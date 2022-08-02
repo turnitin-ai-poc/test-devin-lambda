@@ -1,5 +1,10 @@
 {
   "_extensions": ["local_extensions.VariableSubstitutionExtension"],
+  "_variable_substitution": {
+    "variable_start_string": "__TEMP",
+    "variable_end_string": "TEMP__"
+  },
+
   "project_name": "My Serverless Project",
   "__project_name_kebab_case": "{{ cookiecutter.project_name.lower().replace(' ', '-') }}",
   "__project_name_lower_case": "{{ cookiecutter.project_name.lower().replace(' ', '') }}",
