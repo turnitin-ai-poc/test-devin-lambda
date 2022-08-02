@@ -1,0 +1,8 @@
+{
+  "_extensions": ["local_extensions.VariableSubstitutionExtension"],
+  "project_name": "My Serverless Project",
+  "__project_name_kebab_case": "{{ cookiecutter.project_name.lower().replace(' ', '-') }}",
+  "__project_name_lower_case": "{{ cookiecutter.project_name.lower().replace(' ', '') }}",
+  "__project_name_pascal_case": "{{ cookiecutter.project_name.title().replace(' ', '') }}",
+  "__project_name_snake_case": "{{ cookiecutter.project_name.title().replace(' ', '_') }}"
+}

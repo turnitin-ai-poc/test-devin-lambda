@@ -1,0 +1,5 @@
+package com.turnitin.__TEMP__project_name_lower_caseTEMP__.service;
+
+class __TEMP__project_name_pascal_caseTEMP__ServiceTest {
+
+}

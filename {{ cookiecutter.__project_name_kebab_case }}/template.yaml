@@ -1,0 +1,99 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: 'Example of a Lambda responding to HTTP requests
+
+  '
+Globals:
+    # More info about Globals: https://github.com/awslabs/serverless-application-model/blob/master/docs/globals.rst
+    Function:
+        MemorySize: 1536
+        Runtime: java11
+        Timeout: 30
+    Api:
+        Cors:
+            AllowMethods: "'GET,PUT,POST,DELETE,OPTIONS'"
+            AllowHeaders: "'Content-Type,X-Amz-Date,Authorization,X-Api-Key'"
+            AllowOrigin: "'*'"
+            AllowCredentials: "'*'"
+
+Resources:
+    __TEMP__project_name_pascal_caseTEMP__Function:
+        # More info about Function Resource: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
+        Type: AWS::Serverless::Function
+        Properties:
+            CodeUri: __TEMP__project_name_kebab_caseTEMP__-api/target/__TEMP__project_name_kebab_caseTEMP__-api-1.0.0.zip
+            Handler: com.turnitin.__TEMP__project_name_lower_caseTEMP__.__TEMP__project_name_pascal_caseTEMP__Get
+            Events:
+                __TEMP__project_name_pascal_caseTEMP__HelloApi:
+                    Type: Api
+                    Properties:
+                        Path: /hello/{who}
+                        Method: GET
+    __TEMP__project_name_pascal_caseTEMP__DynamoGetFunction:
+        # More info about Function Resource: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
+        Type: AWS::Serverless::Function
+        Properties:
+            CodeUri: __TEMP__project_name_kebab_caseTEMP__-api/target/__TEMP__project_name_kebab_caseTEMP__-api-1.0.0.zip
+            Handler: com.turnitin.__TEMP__project_name_lower_caseTEMP__.__TEMP__project_name_pascal_caseTEMP__DynamoGet
+            Environment:
+                # More info about Env Vars: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#environment-object
+                Variables:
+                    dynamo_table:
+                        Ref: __TEMP__project_name_pascal_caseTEMP__Table01
+            Policies:
+                -   DynamoDBCrudPolicy:
+                      TableName:
+                          Ref: __TEMP__project_name_pascal_caseTEMP__Table01
+            Events:
+                __TEMP__project_name_pascal_caseTEMP__DynamoGetApi:
+                    Type: Api
+                    Properties:
+                        Path: /dynamo/{dbkey}
+                        Method: GET
+    __TEMP__project_name_pascal_caseTEMP__DynamoPostFunction:
+        # More info about Function Resource: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
+        Type: AWS::Serverless::Function
+        Properties:
+            CodeUri: __TEMP__project_name_kebab_caseTEMP__-api/target/__TEMP__project_name_kebab_caseTEMP__-api-1.0.0.zip
+            Handler: com.turnitin.__TEMP__project_name_lower_caseTEMP__.__TEMP__project_name_pascal_caseTEMP__DynamoPost
+            Environment:
+                # More info about Env Vars: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#environment-object
+                Variables:
+                    dynamo_table:
+                        Ref: __TEMP__project_name_pascal_caseTEMP__Table01
+            Policies:
+                -   DynamoDBCrudPolicy:
+                      TableName:
+                          Ref: __TEMP__project_name_pascal_caseTEMP__Table01
+            Events:
+                __TEMP__project_name_pascal_caseTEMP__DyanmpPostApi:
+                    Type: Api
+                    Properties:
+                        Path: /dynamo/{dbkey}/{value}
+                        Method: POST
+    __TEMP__project_name_pascal_caseTEMP__Table01:
+        Type: AWS::DynamoDB::Table
+        Properties:
+            TableName: __TEMP__project_name_pascal_caseTEMP__Table01
+            BillingMode: PAY_PER_REQUEST
+            AttributeDefinitions:
+                -   AttributeName: pk
+                    AttributeType: S
+                -   AttributeName: sk
+                    AttributeType: S
+            KeySchema:
+                -   AttributeName: pk
+                    KeyType: HASH
+                -   AttributeName: sk
+                    KeyType: RANGE
+
+# Metadata:
+    # https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/metadata-section-structure.html
+# Parameters:
+    # https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/parameters-section-structure.html
+# Mappings:
+    # https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/mappings-section-structure.html
+# Conditions:
+    # https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/conditions-section-structure.html
+# Outputs:
+    # https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/outputs-section-structure.html
