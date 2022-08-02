@@ -1,4 +1,4 @@
-# Contributing to Panda templates
+# Contributing to TRA templates
 
 :tada: First and foremost, thank you for taking the time to contribute! :tada:
 
@@ -15,13 +15,16 @@ code. Alternatively, we can be reached directly on Slack as `@Phillip Winn`, `@B
 ## Getting Started
 
 The key to the TRA templates is that they can be built and tested directly using `mvn clean package` in a directory
-with a `pom.xml` file. Usually this is
-`_temp_` or some variation on that. This should make it easier to make changes to than many templates which require a
-generation step before they'll compile.
+with a `pom.xml` file. Usually this is `__TEMPproject_nameTEMP__` or some variation on that, where
+- the `__TEMP` prefix, indicates the start of a variable name,
+- `project_name` is one of the variables defined in [cookiecutter.json](./cookiecutter.json),
+- and `TEMP__` suffix, indicates the end of a variable name.
+
+This should make it easier to make changes to than many templates which require a generation step before they'll compile.
 
 The `.gitignore` file is set up to ensure that IntelliJ IDEA files don't make it into the repos. If your editor or IDE
-of choice isn't excluded, please update
-`.gitignore`! While we depend on Maven as a build system, we want to be agnostic about editors/IDEs.
+of choice isn't excluded, please update `.gitignore`! While we depend on Maven as a build system, we want to be agnostic
+about editors/IDEs.
 
 Some information about each template is included in the README.md files for the template, while additional information
 about the project can be found on Confluence

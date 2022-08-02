@@ -1,11 +1,3 @@
-# DO NOT CLONE DIRECTLY
-
-If you want to make changes to this template, then yes, clone this, make changes, and create a pull request, but please be sure to follow the [Contributing](../CONTRIBUTING.md) instructions.
-
-However, if you're trying to create a new lambda, this repo should be cloned using the `project_generator.py` script found in
-[GitHub Enterprise](https://ghe.iparadigms.com/AppOps/project-generator.git) and [BitBucket](https://bitbucket.org/examsoft/tra-project-generator/src/master/). Once that's done, the below applies.
-
-
 # __TEMP__project_name_pascal_caseTEMP__ QuickStart
 
 Have working AWS credentials for DEV001, either `default` or env var `AWS_PROFILE` points to them
