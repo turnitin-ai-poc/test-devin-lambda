@@ -7,7 +7,7 @@ architectural patterns around lambdas.
 
 This template can be instantiated for a new project with
 ```shell
-sam init --location git@github.com:turnitin/tra-template-lambda
+sam init --location git@github.com:turnitin/tra-template-lambda-java
 ```
 
 You should not need to checkout this repository, when working with lambdas.
