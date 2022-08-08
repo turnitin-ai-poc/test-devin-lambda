@@ -16,14 +16,16 @@ to create the required DynamoDB table in DEV001.
 This project contains source code and supporting files for a serverless application that you can deploy with the AWS SAM
 CLI. It includes the following files and folders:
 
-- __TEMP__project_name_kebab_caseTEMP__-api/src/main - Code for two Lambda functions, including log configuration.
+- __TEMP__project_name_kebab_caseTEMP__-api/src/main - Code for three Lambda functions, including log configuration.
+- __TEMP__project_name_kebab_caseTEMP__-listener/src/main - Code for the Lambda function.
 - __TEMP__project_name_kebab_caseTEMP__-core/ - Shared code (DB objects) and resources (log config).
-- pom.xml - Defines this multi-module Maven project with the two modules above.
+- events/sqs.json - An example SQSEvent for local testing.
+- pom.xml - Defines this multi-module Maven project with the three modules above.
 - samconfig.xml - SAM config for deployments.
 - template.yaml - SAM template that defines resources for these functions.
 - bitbucket-pipelines.yml - Bitbucket pipelines uses this, so it's for DevOps.
 
-This example sets up two ApiGateway Lambdas:
+This example sets up three ApiGateway Lambdas:
 
 http://127.0.0.1:3000/hello/{name} [GET] is a simple Hello, World lambda
 
@@ -43,6 +45,12 @@ Based on your use case you should delete the one you don't need/want.  To do so,
 **Note:** The Dynamo entry point uses the schema which is defined in `template.yaml` as ` __TEMP__project_name_pascal_caseTEMP__Table01`. Should your use case not need
 DynamoDB remove the two entry poins from the code, as well as the package `__TEMP__project_name_kebab_caseTEMP__-core/src/main/java/com/turnitin/__TEMP__project_name_lower_caseTEMP__/dao`. The remove the entrypoints and the table from the `template.yaml` 
 as well as the dependency from the `pom.xml` in order to reduce your package size. 
+
+1. `_-temp_skewer-_-listener/src/main/java/com/turnitin/_-temp_lower-_/_-temp_title-_` This listener is for handling straight SQS messages some other application may have published.
+2. `_-temp_skewer-_-listener/src/main/java/com/turnitin/_-temp_lower-_/_-temp_title-_S3` This listener is for handling S3 events from an SQS queue.
+
+Based on your use case you should delete the one you don't need/want.  To do so, remove the unwanted listener from the code and from the `template.yaml`.
+
 
 # Dependencies
 

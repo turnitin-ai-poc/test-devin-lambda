@@ -12,6 +12,7 @@
     <modules>
         <module>__TEMP__project_name_kebab_caseTEMP__-core</module>
         <module>__TEMP__project_name_kebab_caseTEMP__-api</module>
+        <module>__TEMP__project_name_kebab_caseTEMP__-listener</module>
     </modules>
 
     <properties>
@@ -84,22 +85,22 @@
             <artifactId>apache-client</artifactId>
         </dependency>
 <!--        <dependency>-->
-<!--            <groupId>com.turnitin.panda</groupId>-->
-<!--            <artifactId>panda-client</artifactId>-->
-<!--            <version>1.0.5</version>-->
-<!--        </dependency>-->
-<!--        <dependency>-->
 <!--            <groupId>software.amazon.awssdk</groupId>-->
 <!--            <artifactId>sqs</artifactId>-->
 <!--        </dependency>-->
-<!--        <dependency>-->
-<!--            <groupId>software.amazon.awssdk</groupId>-->
-<!--            <artifactId>s3</artifactId>-->
-<!--        </dependency>-->
+        <dependency>
+            <groupId>software.amazon.awssdk</groupId>
+            <artifactId>s3</artifactId>
+        </dependency>
 <!--        <dependency>-->
 <!--            <groupId>software.amazon.awssdk</groupId>-->
 <!--            <artifactId>sns</artifactId>-->
 <!--        </dependency>-->
+        <dependency>
+            <groupId>com.turnitin.panda</groupId>
+            <artifactId>panda-client</artifactId>
+            <version>1.0.5-SNAPSHOT</version>
+        </dependency>
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
