@@ -41,7 +41,6 @@ class VariableSubstitutionExtension(Extension):
         var_end_str = self.environment.variable_end_string
 
         def replace_variable(match: t.Match) -> str:
-            return "{} cookiecutter.{} {}".format(var_start_str, match[1],
-                                                  var_end_str)
+            return f"{var_start_str} cookiecutter.{match[1]} {var_end_str}"
 
         return self.var_subs_regex.sub(replace_variable, source)
