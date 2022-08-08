@@ -9,7 +9,7 @@ import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-class __TEMP__project_name_pascal_caseTEMP__Test {
+class __TEMP__project_name_pascal_caseTEMP__GetTest {
 
     @Test
     void testWithNoInput() {
