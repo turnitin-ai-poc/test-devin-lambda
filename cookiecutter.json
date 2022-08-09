@@ -4,10 +4,19 @@
     "variable_start_string": "__TEMP",
     "variable_end_string": "TEMP__"
   },
+  "_jinja2_env_vars": {
+    "block_start_string": "<!--TEMP",
+    "block_end_string": "TEMP-->"
+  },
 
   "project_name": "My Serverless Project",
   "__project_name_kebab_case": "{{ cookiecutter.project_name.lower().replace(' ', '-') }}",
   "__project_name_lower_case": "{{ cookiecutter.project_name.lower().replace(' ', '') }}",
   "__project_name_pascal_case": "{{ cookiecutter.project_name.title().replace(' ', '') }}",
-  "__project_name_snake_case": "{{ cookiecutter.project_name.title().replace(' ', '_') }}"
+  "__project_name_snake_case": "{{ cookiecutter.project_name.title().replace(' ', '_') }}",
+
+  "include_dynamodb": false,
+  "include_http": false,
+  "include_sqs_listener": false,
+  "include_s3_listener": false
 }
