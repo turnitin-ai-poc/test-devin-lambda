@@ -10,15 +10,15 @@
     <packaging>pom</packaging>
 
     <modules>
-        <!--TEMP if cookiecutter.include_http is selected_option or cookiecutter.include_dynamodb is selected_option or cookiecutter.include_sqs_listener is selected_option: TEMP-->
+<!--TEMP if cookiecutter.include_http is selected_option or cookiecutter.include_dynamodb is selected_option or cookiecutter.include_sqs_listener is selected_option: TEMP-->
         <module>__TEMP__project_name_kebab_caseTEMP__-core</module>
-        <!--TEMP endif TEMP-->
-        <!--TEMP if cookiecutter.include_http is selected_option or cookiecutter.include_dynamodb is selected_option: TEMP-->
+<!--TEMP endif TEMP-->
+<!--TEMP if cookiecutter.include_http is selected_option or cookiecutter.include_dynamodb is selected_option: TEMP-->
         <module>__TEMP__project_name_kebab_caseTEMP__-api</module>
-        <!--TEMP endif TEMP-->
-        <!--TEMP if cookiecutter.include_sqs_listener is selected_option or cookiecutter.include_s3_listener is selected_option: TEMP-->
+<!--TEMP endif TEMP-->
+<!--TEMP if cookiecutter.include_sqs_listener is selected_option or cookiecutter.include_s3_listener is selected_option: TEMP-->
         <module>__TEMP__project_name_kebab_caseTEMP__-listener</module>
-        <!--TEMP endif TEMP-->
+<!--TEMP endif TEMP-->
     </modules>
 
     <properties>
@@ -80,6 +80,7 @@
 <!--        Optional Dependencies. -->
 <!--        Uncomment the ones you will need in your project and leave the others commented-->
 <!--        so as to reduce the JAR size and speed up the lambda load time.-->
+<!--TEMP if cookiecutter.include_dynamodb is selected_option: TEMP-->
         <dependency>
             <groupId>software.amazon.awssdk</groupId>
             <artifactId>dynamodb-enhanced</artifactId>
@@ -90,14 +91,33 @@
             <groupId>software.amazon.awssdk</groupId>
             <artifactId>apache-client</artifactId>
         </dependency>
+<!--TEMP else: TEMP-->
+        <!--        <dependency>-->
+        <!--            <groupId>software.amazon.awssdk</groupId>-->
+        <!--            <artifactId>dynamodb-enhanced</artifactId>-->
+        <!--        </dependency>-->
+<!--        &lt;!&ndash; used by the dynamodb-enhanced library &ndash;&gt;-->
+<!--        &lt;!&ndash; If you comment out the dynamodb-enhanced library, comment this out also &ndash;&gt;-->
+<!--        <dependency>-->
+<!--            <groupId>software.amazon.awssdk</groupId>-->
+<!--            <artifactId>apache-client</artifactId>-->
+<!--        </dependency>-->
+<!--TEMP endif TEMP-->
 <!--        <dependency>-->
 <!--            <groupId>software.amazon.awssdk</groupId>-->
 <!--            <artifactId>sqs</artifactId>-->
 <!--        </dependency>-->
+<!--TEMP if cookiecutter.include_s3_listener is selected_option: TEMP-->
         <dependency>
             <groupId>software.amazon.awssdk</groupId>
             <artifactId>s3</artifactId>
         </dependency>
+<!--TEMP else: TEMP-->
+<!--        <dependency>-->
+<!--            <groupId>software.amazon.awssdk</groupId>-->
+<!--            <artifactId>s3</artifactId>-->
+<!--        </dependency>-->
+<!--TEMP endif TEMP-->
 <!--        <dependency>-->
 <!--            <groupId>software.amazon.awssdk</groupId>-->
 <!--            <artifactId>sns</artifactId>-->
