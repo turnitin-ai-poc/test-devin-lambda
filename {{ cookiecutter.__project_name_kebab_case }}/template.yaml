@@ -1,9 +1,16 @@
 AWSTemplateFormatVersion: '2010-09-09'
 Transform: AWS::Serverless-2016-10-31
-Description: 'Example of a Lambda responding to HTTP requests
-
-  Example of receiving messages on an SQS queue with Lambda
-  Handles custom SQS messages by default, or SQS-wrapped S3 Events with a small code change.
+Description: '
+  Example(s) of lambda(s)
+  #TEMP if cookiecutter.include_dynamodb is selected_option or cookiecutter.include_http is selected_option:
+  - responding to HTTP requests
+  #TEMP endif
+  #TEMP if cookiecutter.include_sqs_listener is selected_option:
+  - handling SQS messages on an SQS queue
+  #TEMP endif
+  #TEMP if cookiecutter.include_s3_listener is selected_option:
+  - listening to SQS-wrapped S3 events
+  #TEMP endif
   '
 Globals:
     # More info about Globals: https://github.com/awslabs/serverless-application-model/blob/master/docs/globals.rst
@@ -19,6 +26,7 @@ Globals:
             AllowCredentials: "'*'"
 
 Resources:
+    #TEMP if cookiecutter.include_http is selected_option:
     __TEMP__project_name_pascal_caseTEMP__Function:
         # More info about Function Resource: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
         Type: AWS::Serverless::Function
@@ -31,6 +39,8 @@ Resources:
                     Properties:
                         Path: /hello/{who}
                         Method: GET
+    #TEMP endif
+    #TEMP if cookiecutter.include_dynamodb is selected_option:
     __TEMP__project_name_pascal_caseTEMP__DynamoGetFunction:
         # More info about Function Resource: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
         Type: AWS::Serverless::Function
@@ -73,6 +83,8 @@ Resources:
                     Properties:
                         Path: /dynamo/{dbkey}/{value}
                         Method: POST
+    #TEMP endif
+    #TEMP if cookiecutter.include_sqs_listener is selected_option:
     __TEMP__project_name_pascal_caseTEMP__FunctionSQS:
         # More info about Function Resource: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
         Type: AWS::Serverless::Function
@@ -95,6 +107,8 @@ Resources:
                                 - __TEMP__project_name_pascal_caseTEMP__SqsQueue
                                 - Arn
                         BatchSize: 10
+    #TEMP endif
+    #TEMP if cookiecutter.include_s3_listener is selected_option:
     __TEMP__project_name_pascal_caseTEMP__FunctionS3:
         # More info about Function Resource: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
         Type: AWS::Serverless::Function
@@ -117,10 +131,14 @@ Resources:
                                 - __TEMP__project_name_pascal_caseTEMP__SqsQueue
                                 - Arn
                         BatchSize: 10
+    #TEMP endif
+    #TEMP if cookiecutter.include_sqs_listener is selected_option or cookiecutter.include_s3_listener is selected_option:
     __TEMP__project_name_pascal_caseTEMP__SqsQueue:
         Type: AWS::SQS::Queue
         Properties:
             VisibilityTimeout: 900
+    #TEMP endif
+    #TEMP if cookiecutter.include_dynamodb is selected_option:
     __TEMP__project_name_pascal_caseTEMP__Table01:
         Type: AWS::DynamoDB::Table
         Properties:
@@ -136,6 +154,7 @@ Resources:
                     KeyType: HASH
                 -   AttributeName: sk
                     KeyType: RANGE
+    #TEMP endif
 
 # Metadata:
     # https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/metadata-section-structure.html
