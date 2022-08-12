@@ -1,5 +1,8 @@
 {
-  "_extensions": ["local_extensions.VariableSubstitutionExtension"],
+  "_extensions": [
+    "local_extensions.VariableSubstitutionExtension",
+    "local_extensions.OptionSelectionTestExtension"
+  ],
   "_variable_substitution": {
     "variable_start_string": "__TEMP",
     "variable_end_string": "TEMP__"
@@ -15,8 +18,8 @@
   "__project_name_pascal_case": "{{ cookiecutter.project_name.title().replace(' ', '') }}",
   "__project_name_snake_case": "{{ cookiecutter.project_name.title().replace(' ', '_') }}",
 
-  "include_dynamodb": false,
-  "include_http": false,
-  "include_sqs_listener": false,
-  "include_s3_listener": false
+  "include_dynamodb": "no",
+  "include_http": "no",
+  "include_sqs_listener": "no",
+  "include_s3_listener": "no"
 }
