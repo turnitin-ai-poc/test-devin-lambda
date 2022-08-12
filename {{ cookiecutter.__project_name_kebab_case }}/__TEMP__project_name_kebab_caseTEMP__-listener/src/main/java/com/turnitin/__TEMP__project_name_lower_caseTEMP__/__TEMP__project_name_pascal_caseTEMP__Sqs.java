@@ -1,3 +1,4 @@
+//TEMP if cookiecutter.include_sqs_listener is selected_option:
 package com.turnitin.__TEMP__project_name_lower_caseTEMP__;
 
 
@@ -40,3 +41,4 @@ public class __TEMP__project_name_pascal_caseTEMP__Sqs extends SqsLambda {
         __TEMP__project_name_lower_caseTEMP__service.doHello(sqsMessage.getBody());
     }
 }
+//TEMP endif

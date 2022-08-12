@@ -9,7 +9,10 @@
   },
   "_jinja2_env_vars": {
     "block_start_string": "<!--TEMP",
-    "block_end_string": "TEMP-->"
+    "block_end_string": "TEMP-->",
+    "line_statement_prefix": "//TEMP",
+    "trim_blocks": true,
+    "lstrip_blocks": true
   },
 
   "project_name": "My Serverless Project",

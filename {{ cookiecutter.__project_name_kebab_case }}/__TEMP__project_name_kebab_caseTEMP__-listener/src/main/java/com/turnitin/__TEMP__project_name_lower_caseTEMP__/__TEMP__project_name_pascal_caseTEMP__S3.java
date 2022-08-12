@@ -1,3 +1,4 @@
+//TEMP if cookiecutter.include_s3_listener is selected_option:
 package com.turnitin.__TEMP__project_name_lower_caseTEMP__;
 
 
@@ -38,3 +39,4 @@ public class __TEMP__project_name_pascal_caseTEMP__S3 extends S3SqsLambda {
         GetObjectResponse s3ObjectResponse = ctx.getS3client().getObject(getObjectRequest).response();
     }
 }
+//TEMP endif

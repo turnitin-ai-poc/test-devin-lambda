@@ -1,3 +1,4 @@
+//TEMP if cookiecutter.include_dynamodb is selected_option:
 package com.turnitin.__TEMP__project_name_lower_caseTEMP__.dao;
 
 import com.turnitin.commons.db.dynamo.Persistable;
@@ -58,3 +59,4 @@ public class SimpleRecord implements Persistable{
 
 
 }
+//TEMP endif

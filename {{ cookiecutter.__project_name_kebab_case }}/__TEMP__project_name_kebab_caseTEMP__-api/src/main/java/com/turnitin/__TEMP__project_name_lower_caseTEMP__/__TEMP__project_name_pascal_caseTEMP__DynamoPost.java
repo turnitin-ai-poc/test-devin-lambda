@@ -1,3 +1,4 @@
+//TEMP if cookiecutter.include_dynamodb is selected_option:
 package com.turnitin.__TEMP__project_name_lower_caseTEMP__;
 
 import com.turnitin.__TEMP__project_name_lower_caseTEMP__.dao.SimpleRecord;
@@ -63,3 +64,4 @@ public class __TEMP__project_name_pascal_caseTEMP__DynamoPost extends ApiGateway
 
 
 }
+//TEMP endif

@@ -1,3 +1,4 @@
+//TEMP if cookiecutter.include_http is selected_option:
 package com.turnitin.__TEMP__project_name_lower_caseTEMP__;
 
 import com.amazonaws.services.lambda.runtime.Context;
@@ -30,3 +31,4 @@ class __TEMP__project_name_pascal_caseTEMP__GetTest {
         assertThat(response.getStatusCode()).isEqualTo(HttpStatus.SC_OK);
     }
 }
+//TEMP endif
