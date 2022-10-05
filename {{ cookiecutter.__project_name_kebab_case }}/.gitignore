@@ -50,3 +50,6 @@ Thumbs.db
 *.flv
 *.mov
 *.wmv
+
+# AWS SAM Build artifacts
+.aws-sam

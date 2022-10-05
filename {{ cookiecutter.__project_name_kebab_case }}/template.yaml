@@ -26,6 +26,20 @@ Globals:
             AllowCredentials: "'*'"
 
 Resources:
+    #TEMP if cookiecutter.include_http is selected_option or cookiecutter.include_dynamodb is selected_option or cookiecutter.include_sqs_listener is selected_option:
+    __TEMP__project_name_pascal_caseTEMP__CoreLayer:
+        Type: AWS::Serverless::LayerVersion
+        Properties:
+            LayerName: __TEMP__project_name_kebab_caseTEMP__-core
+            Description: "__TEMPproject_nameTEMP__ Core"
+            ContentUri: __TEMP__project_name_kebab_caseTEMP__-core
+            CompatibleRuntimes:
+                - java11
+            RetentionPolicy: Retain
+        Metadata:
+            BuildMethod: java11
+    #TEMP endif
+
     #TEMP if cookiecutter.include_http is selected_option:
     __TEMP__project_name_pascal_caseTEMP__Function:
         # More info about Function Resource: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction

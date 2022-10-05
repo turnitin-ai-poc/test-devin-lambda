@@ -52,11 +52,6 @@
 
     <dependencies>
         <dependency>
-            <groupId>com.turnitin.commons</groupId>
-            <artifactId>commons</artifactId>
-            <version>${turnitin-commons.version}</version>
-        </dependency>
-        <dependency>
             <groupId>com.amazonaws</groupId>
             <artifactId>aws-lambda-java-log4j2</artifactId>
             <version>${aws-lambda-java-log4j2.version}</version>
@@ -77,32 +72,6 @@
             <artifactId>log4j-api</artifactId>
             <version>${log4j.version}</version>
         </dependency>
-<!--        Optional Dependencies. -->
-<!--        Uncomment the ones you will need in your project and leave the others commented-->
-<!--        so as to reduce the JAR size and speed up the lambda load time.-->
-<!--TEMP if cookiecutter.include_dynamodb is selected_option: TEMP-->
-        <dependency>
-            <groupId>software.amazon.awssdk</groupId>
-            <artifactId>dynamodb-enhanced</artifactId>
-        </dependency>
-        <!-- used by the dynamodb-enhanced library -->
-        <!-- If you comment out the dynamodb-enhanced library, comment this out also -->
-        <dependency>
-            <groupId>software.amazon.awssdk</groupId>
-            <artifactId>apache-client</artifactId>
-        </dependency>
-<!--TEMP else: TEMP-->
-        <!--        <dependency>-->
-        <!--            <groupId>software.amazon.awssdk</groupId>-->
-        <!--            <artifactId>dynamodb-enhanced</artifactId>-->
-        <!--        </dependency>-->
-<!--        &lt;!&ndash; used by the dynamodb-enhanced library &ndash;&gt;-->
-<!--        &lt;!&ndash; If you comment out the dynamodb-enhanced library, comment this out also &ndash;&gt;-->
-<!--        <dependency>-->
-<!--            <groupId>software.amazon.awssdk</groupId>-->
-<!--            <artifactId>apache-client</artifactId>-->
-<!--        </dependency>-->
-<!--TEMP endif TEMP-->
 <!--        <dependency>-->
 <!--            <groupId>software.amazon.awssdk</groupId>-->
 <!--            <artifactId>sqs</artifactId>-->
@@ -126,12 +95,6 @@
             <groupId>com.turnitin.panda</groupId>
             <artifactId>panda-client</artifactId>
             <version>1.0.5-SNAPSHOT</version>
-        </dependency>
-        <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-            <version>${lombok.version}</version>
-            <scope>provided</scope>
         </dependency>
 
         <!-- Test Dependencies -->
