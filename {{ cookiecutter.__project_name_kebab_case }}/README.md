@@ -22,7 +22,7 @@ CLI. It includes the following files and folders:
 #TEMP if cookiecutter.include_dynamodb is selected_option or cookiecutter.include_http is selected_option:
 - __TEMP__project_name_kebab_caseTEMP__-api/src/main - Code for three Lambda functions, including log configuration.
 #TEMP endif
-#TEMP if cookiecutter.include_sqs_listener is selected_option or cookiecutter.include_s3_listener:
+#TEMP if cookiecutter.include_sqs_listener is selected_option or cookiecutter.include_s3_listener is selected_option:
 - __TEMP__project_name_kebab_caseTEMP__-listener/src/main - Code for the Lambda function.
 #TEMP endif
 #TEMP if cookiecutter.include_http is selected_option or cookiecutter.include_dynamodb is selected_option or cookiecutter.include_sqs_listener is selected_option:
