@@ -45,8 +45,10 @@ Resources:
         # More info about Function Resource: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
         Type: AWS::Serverless::Function
         Properties:
-            CodeUri: __TEMP__project_name_kebab_caseTEMP__-api/target/__TEMP__project_name_kebab_caseTEMP__-api-1.0.0.zip
+            CodeUri: __TEMP__project_name_kebab_caseTEMP__-api
             Handler: com.turnitin.__TEMP__project_name_lower_caseTEMP__.__TEMP__project_name_pascal_caseTEMP__Get
+            Layers:
+                - !Ref __TEMP__project_name_pascal_caseTEMP__CoreLayer
             Events:
                 __TEMP__project_name_pascal_caseTEMP__HelloApi:
                     Type: Api
@@ -59,8 +61,10 @@ Resources:
         # More info about Function Resource: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
         Type: AWS::Serverless::Function
         Properties:
-            CodeUri: __TEMP__project_name_kebab_caseTEMP__-api/target/__TEMP__project_name_kebab_caseTEMP__-api-1.0.0.zip
+            CodeUri: __TEMP__project_name_kebab_caseTEMP__-api
             Handler: com.turnitin.__TEMP__project_name_lower_caseTEMP__.__TEMP__project_name_pascal_caseTEMP__DynamoGet
+            Layers:
+                - !Ref __TEMP__project_name_pascal_caseTEMP__CoreLayer
             Environment:
                 # More info about Env Vars: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#environment-object
                 Variables:
@@ -80,8 +84,10 @@ Resources:
         # More info about Function Resource: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
         Type: AWS::Serverless::Function
         Properties:
-            CodeUri: __TEMP__project_name_kebab_caseTEMP__-api/target/__TEMP__project_name_kebab_caseTEMP__-api-1.0.0.zip
+            CodeUri: __TEMP__project_name_kebab_caseTEMP__-api
             Handler: com.turnitin.__TEMP__project_name_lower_caseTEMP__.__TEMP__project_name_pascal_caseTEMP__DynamoPost
+            Layers:
+                - !Ref __TEMP__project_name_pascal_caseTEMP__CoreLayer
             Environment:
                 # More info about Env Vars: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#environment-object
                 Variables:
