@@ -1,20 +1,6 @@
 import glob
 import os
 import shutil
-import xml.etree.ElementTree as XMLElementTree
-
-
-def find_all_maven_projects():
-    maven_project_directories = glob.glob("__TEMP__project_name_kebab_caseTEMP__-*/")
-    return set(dir_name.rstrip("/") for dir_name in maven_project_directories)
-
-
-def find_included_maven_projects():
-    tree = XMLElementTree.parse("pom.xml")
-    root = tree.getroot()
-    modules = root.find("pom:modules",
-                        {"pom": "http://maven.apache.org/POM/4.0.0"})
-    return [module.text for module in modules]
 
 
 def remove_empty_files_and_directories():
@@ -30,14 +16,17 @@ def remove_empty_files_and_directories():
                 os.remove(file_path)
 
 
-def main():
-    all_maven_projects = find_all_maven_projects()
-    required_maven_projects = find_included_maven_projects()
-    maven_projects_to_remove = all_maven_projects - set(required_maven_projects)
-    for project in maven_projects_to_remove:
-        shutil.rmtree(project)
+def remove_empty_projects():
+    maven_project_directories = glob.glob("__TEMP__project_name_kebab_caseTEMP__-*/")
+    for project_dir in maven_project_directories:
+        java_src_path = os.path.join(project_dir, "src", "main", "java")
+        if not os.path.exists(java_src_path):
+            shutil.rmtree(project_dir)
 
+
+def main():
     remove_empty_files_and_directories()
+    remove_empty_projects()
 
 
 if __name__ == "__main__":
