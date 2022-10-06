@@ -16,4 +16,9 @@ If you want to make changes to the template itself however, then you would want
 to checkout this repository, make changes, and create a pull request, following
 the [Contributing](./CONTRIBUTING.md) instructions.
 
+To test the template generation locally, run
+```shell
+sam init --location /path/to/tra-template-lambda-java
+```
+
 

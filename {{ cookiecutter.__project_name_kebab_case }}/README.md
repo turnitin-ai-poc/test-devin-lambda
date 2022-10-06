@@ -1,17 +1,51 @@
 # __TEMP__project_name_pascal_caseTEMP__ QuickStart
 
-Have working AWS credentials for DEV001, either `default` or env var `AWS_PROFILE` points to them
+The Serverless Application Model Command Line Interface (SAM CLI) is an extension of the AWS CLI that adds functionality
+for building and testing Lambda applications. It uses Docker to run your functions in an Amazon Linux environment that
+matches Lambda. It can also emulate your application's build environment and API.
 
-1. `mvn clean package` to build the Maven multi-module project
-2. `sam local start-api` will run the code locally
-3. `sam deploy` to deploy to DEV001
+To use the SAM CLI, you need the following tools.
 
-To "un-deploy" a stack from the AWS dev environment, run `aws cloudformation delete-stack --stack-name <stackname>`
+* SAM CLI - [Install the SAM CLI](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-sam-cli-install.html)
+* Java11 - [Install the Java 11](https://docs.aws.amazon.com/corretto/latest/corretto-11-ug/downloads-list.html)
+* Maven - [Install Maven](https://maven.apache.org/install.html)
+* Docker - [Install Docker community edition](https://hub.docker.com/search/?type=edition&offering=community)
+
+
+## Deploy locally
+
+To build your application for the first time, run the following in your terminal:
+
+```bash
+sam build
+```
+
+Once built there will be a new dir added `.aws-sam`
+
+#TEMP if cookiecutter.include_dynamodb is selected_option or cookiecutter.include_http is selected_option:
+To run the application locally you can run the following in your terminal, and then `Press CTRL+C to quit` at any time
+to stop it.
+```bash
+sam local start-api
+```
+This will expose the API Gateway locally at `http://127.0.0.1:3000/`.
+#TEMP endif
 
 #TEMP if cookiecutter.include_dynamodb is selected_option:
-Note: The local /crud endpoint depends on `sam deploy` being done at least once
-to create the required DynamoDB table in DEV001.
+Note: The local dynamo endpoint depends on `sam deploy` being done at least once
+to create the required DynamoDB table in AWS (see next section).
 #TEMP endif
+
+
+## Deploy on AWS
+
+`sam deploy` will deploy with a default stack environment of `Dev001`. Optionally, you can customize your deployment by
+running `sam deploy --guided`.
+
+To "un-deploy" a stack from the AWS dev environment, run `aws cloudformation delete-stack --stack-name <stack-name>`.
+
+Note that in order to do this, you will need to have working AWS credentials for the environment you are deploying to,
+either `default` or env var `AWS_PROFILE` points to them.
 
 
 # __TEMP__project_name_pascal_caseTEMP__ Details
@@ -22,7 +56,7 @@ CLI. It includes the following files and folders:
 #TEMP if cookiecutter.include_dynamodb is selected_option or cookiecutter.include_http is selected_option:
 - __TEMP__project_name_kebab_caseTEMP__-api/src/main - Code for three Lambda functions, including log configuration.
 #TEMP endif
-#TEMP if cookiecutter.include_sqs_listener is selected_option or cookiecutter.include_s3_listener:
+#TEMP if cookiecutter.include_sqs_listener is selected_option or cookiecutter.include_s3_listener is selected_option:
 - __TEMP__project_name_kebab_caseTEMP__-listener/src/main - Code for the Lambda function.
 #TEMP endif
 #TEMP if cookiecutter.include_http is selected_option or cookiecutter.include_dynamodb is selected_option or cookiecutter.include_sqs_listener is selected_option:
