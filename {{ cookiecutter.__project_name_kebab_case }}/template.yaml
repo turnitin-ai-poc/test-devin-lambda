@@ -12,6 +12,14 @@ Description: '
   - listening to SQS-wrapped S3 events
   #TEMP endif
   '
+
+Parameters:
+    # More info about Parameters: # https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/parameters-section-structure.html
+    StackEnv:
+        Type: String
+        Default: Dev001
+        Description: Stack prefix/suffix to make resource names unique in the Tii eco-system per environment.
+
 Globals:
     # More info about Globals: https://github.com/awslabs/serverless-application-model/blob/master/docs/globals.rst
     Function:
@@ -40,6 +48,15 @@ Resources:
             BuildMethod: java11
     #TEMP endif
 
+    #TEMP if cookiecutter.include_http is selected_option or cookiecutter.include_dynamodb is selected_option:
+    __TEMP__project_name_pascal_caseTEMP__Api:
+        Type: AWS::Serverless::Api
+        Properties:
+            StageName: !Ref StackEnv
+            EndpointConfiguration:
+                Type: REGIONAL
+    #TEMP endif
+
     #TEMP if cookiecutter.include_http is selected_option:
     __TEMP__project_name_pascal_caseTEMP__Function:
         # More info about Function Resource: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
@@ -53,6 +70,7 @@ Resources:
                 __TEMP__project_name_pascal_caseTEMP__HelloApi:
                     Type: Api
                     Properties:
+                        RestApiId: !Ref __TEMP__project_name_pascal_caseTEMP__Api
                         Path: /hello/{who}
                         Method: GET
     #TEMP endif
@@ -78,6 +96,7 @@ Resources:
                 __TEMP__project_name_pascal_caseTEMP__DynamoGetApi:
                     Type: Api
                     Properties:
+                        RestApiId: !Ref __TEMP__project_name_pascal_caseTEMP__Api
                         Path: /dynamo/{dbkey}
                         Method: GET
     __TEMP__project_name_pascal_caseTEMP__DynamoPostFunction:
@@ -101,6 +120,7 @@ Resources:
                 __TEMP__project_name_pascal_caseTEMP__DyanmpPostApi:
                     Type: Api
                     Properties:
+                        RestApiId: !Ref __TEMP__project_name_pascal_caseTEMP__Api
                         Path: /dynamo/{dbkey}/{value}
                         Method: POST
     #TEMP endif
@@ -178,13 +198,15 @@ Resources:
                     KeyType: RANGE
     #TEMP endif
 
+Outputs:
+    # https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/outputs-section-structure.html
+    __TEMP__project_name_pascal_caseTEMP__ApiRootURL:
+        Description: API Gateway root URL for __TEMP__project_name_pascal_caseTEMP__ API
+        Value: !Sub "https://{{ '${' }}__TEMP__project_name_pascal_caseTEMP__Api{{ '}' }}.execute-api.${AWS::Region}.amazonaws.com/${StackEnv}"
+
 # Metadata:
     # https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/metadata-section-structure.html
-# Parameters:
-    # https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/parameters-section-structure.html
 # Mappings:
     # https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/mappings-section-structure.html
 # Conditions:
     # https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/conditions-section-structure.html
-# Outputs:
-    # https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/outputs-section-structure.html
