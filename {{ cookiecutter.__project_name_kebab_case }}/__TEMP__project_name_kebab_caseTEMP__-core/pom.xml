@@ -13,7 +13,7 @@
         <maven.compiler.target>11</maven.compiler.target>
         <maven.compiler.release>11</maven.compiler.release>
 
-        <turnitin-commons.version>1.0.21</turnitin-commons.version>
+        <turnitin-commons.version>3.0.0</turnitin-commons.version>
         <aws-java-sdk.version>2.17.75</aws-java-sdk.version>
         <aws-lambda-java-log4j2.version>1.5.1</aws-lambda-java-log4j2.version>
 <!--TEMP if cookiecutter.include_http is selected_option or cookiecutter.include_sqs_listener is selected_option: TEMP-->

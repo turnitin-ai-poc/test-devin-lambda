@@ -13,7 +13,7 @@
         <maven.compiler.target>11</maven.compiler.target>
         <maven.compiler.release>11</maven.compiler.release>
 
-        <turnitin-commons.version>1.0.21</turnitin-commons.version>
+        <turnitin-commons.version>3.0.0</turnitin-commons.version>
         <aws-lambda-java-log4j2.version>1.5.1</aws-lambda-java-log4j2.version>
         <lombok.version>1.18.22</lombok.version>
         <sfl4j.version>1.7.32</sfl4j.version>
