@@ -23,6 +23,7 @@
   "__project_name_kebab_case": "{{ cookiecutter.project_name.lower().replace(' ', '-') }}",
   "__project_name_lower_case": "{{ cookiecutter.project_name.lower().replace(' ', '') }}",
   "__project_name_pascal_case": "{{ cookiecutter.project_name.title().replace(' ', '') }}",
+  "__project_name_camel_case": "{{ (cookiecutter.project_name[0].lower() + cookiecutter.project_name.title()[1:]).replace(' ' , '') }}",
   "__project_name_snake_case": "{{ cookiecutter.project_name.title().replace(' ', '_') }}",
 
   "include_dynamodb": "no",
