@@ -198,11 +198,17 @@ Resources:
                     KeyType: RANGE
     #TEMP endif
 
+#TEMP if cookiecutter.include_http is selected_option or cookiecutter.include_dynamodb is selected_option:
 Outputs:
     # https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/outputs-section-structure.html
     __TEMP__project_name_pascal_caseTEMP__ApiRootURL:
         Description: API Gateway root URL for __TEMP__project_name_pascal_caseTEMP__ API
         Value: !Sub "https://{{ '${' }}__TEMP__project_name_pascal_caseTEMP__Api{{ '}' }}.execute-api.${AWS::Region}.amazonaws.com/${StackEnv}"
+
+#TEMP else
+# Outputs:
+    # https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/outputs-section-structure.html
+#TEMP endif
 
 # Metadata:
     # https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/metadata-section-structure.html
