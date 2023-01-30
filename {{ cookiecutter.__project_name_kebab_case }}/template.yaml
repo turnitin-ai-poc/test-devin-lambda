@@ -34,20 +34,6 @@ Globals:
             AllowCredentials: "'*'"
 
 Resources:
-    #TEMP if cookiecutter.include_http is selected_option or cookiecutter.include_dynamodb is selected_option or cookiecutter.include_sqs_listener is selected_option:
-    __TEMP__project_name_pascal_caseTEMP__CoreLayer:
-        Type: AWS::Serverless::LayerVersion
-        Properties:
-            LayerName: __TEMP__project_name_kebab_caseTEMP__-core
-            Description: "__TEMPproject_nameTEMP__ Core"
-            ContentUri: __TEMP__project_name_kebab_caseTEMP__-core
-            CompatibleRuntimes:
-                - java11
-            RetentionPolicy: Retain
-        Metadata:
-            BuildMethod: java11
-    #TEMP endif
-
     #TEMP if cookiecutter.include_http is selected_option or cookiecutter.include_dynamodb is selected_option:
     __TEMP__project_name_pascal_caseTEMP__Api:
         Type: AWS::Serverless::Api
@@ -62,10 +48,8 @@ Resources:
         # More info about Function Resource: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
         Type: AWS::Serverless::Function
         Properties:
-            CodeUri: __TEMP__project_name_kebab_caseTEMP__-api
-            Handler: com.turnitin.__TEMP__project_name_lower_caseTEMP__.__TEMP__project_name_pascal_caseTEMP__Get
-            Layers:
-                - !Ref __TEMP__project_name_pascal_caseTEMP__CoreLayer
+            CodeUri: .
+            Handler: com.turnitin.__TEMP__project_name_lower_caseTEMP__.api.__TEMP__project_name_pascal_caseTEMP__Get
             Events:
                 __TEMP__project_name_pascal_caseTEMP__HelloApi:
                     Type: Api
@@ -79,10 +63,8 @@ Resources:
         # More info about Function Resource: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
         Type: AWS::Serverless::Function
         Properties:
-            CodeUri: __TEMP__project_name_kebab_caseTEMP__-api
-            Handler: com.turnitin.__TEMP__project_name_lower_caseTEMP__.__TEMP__project_name_pascal_caseTEMP__DynamoGet
-            Layers:
-                - !Ref __TEMP__project_name_pascal_caseTEMP__CoreLayer
+            CodeUri: .
+            Handler: com.turnitin.__TEMP__project_name_lower_caseTEMP__.api.__TEMP__project_name_pascal_caseTEMP__DynamoGet
             Environment:
                 # More info about Env Vars: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#environment-object
                 Variables:
@@ -103,10 +85,8 @@ Resources:
         # More info about Function Resource: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
         Type: AWS::Serverless::Function
         Properties:
-            CodeUri: __TEMP__project_name_kebab_caseTEMP__-api
-            Handler: com.turnitin.__TEMP__project_name_lower_caseTEMP__.__TEMP__project_name_pascal_caseTEMP__DynamoPost
-            Layers:
-                - !Ref __TEMP__project_name_pascal_caseTEMP__CoreLayer
+            CodeUri: .
+            Handler: com.turnitin.__TEMP__project_name_lower_caseTEMP__.api.__TEMP__project_name_pascal_caseTEMP__DynamoPost
             Environment:
                 # More info about Env Vars: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#environment-object
                 Variables:
@@ -129,10 +109,8 @@ Resources:
         # More info about Function Resource: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
         Type: AWS::Serverless::Function
         Properties:
-            CodeUri: __TEMP__project_name_kebab_caseTEMP__-listener
-            Handler: com.turnitin.__TEMP__project_name_lower_caseTEMP__.__TEMP__project_name_pascal_caseTEMP__Sqs::handleRequest
-            Layers:
-                - !Ref __TEMP__project_name_pascal_caseTEMP__CoreLayer
+            CodeUri: .
+            Handler: com.turnitin.__TEMP__project_name_lower_caseTEMP__.listener.__TEMP__project_name_pascal_caseTEMP__Sqs::handleRequest
             Environment:
                 # More info about Env Vars: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#environment-object
                 Variables:
@@ -155,8 +133,8 @@ Resources:
         # More info about Function Resource: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
         Type: AWS::Serverless::Function
         Properties:
-            CodeUri: __TEMP__project_name_kebab_caseTEMP__-listener
-            Handler: com.turnitin.__TEMP__project_name_lower_caseTEMP__.__TEMP__project_name_pascal_caseTEMP__S3::handleRequest
+            CodeUri: .
+            Handler: com.turnitin.__TEMP__project_name_lower_caseTEMP__.listener.__TEMP__project_name_pascal_caseTEMP__S3::handleRequest
             Environment:
                 # More info about Env Vars: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#environment-object
                 Variables:
