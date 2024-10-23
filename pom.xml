@@ -2,8 +2,8 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.turnitin.__TEMP__project_name_lower_caseTEMP__</groupId>
-    <artifactId>__TEMP__project_name_kebab_caseTEMP__</artifactId>
+    <groupId>com.turnitin.fizzbuzzlambdafunction</groupId>
+    <artifactId>fizzbuzz-lambda-function</artifactId>
     <version>1.0.0</version>
 
     <properties>
@@ -24,9 +24,6 @@
         <aws-lambda-java-log4j2.version>1.5.1</aws-lambda-java-log4j2.version>
         <junit-jupiter.version>5.9.1</junit-jupiter.version>
         <mockito.version>4.11.0</mockito.version>
-        <!--TEMP if cookiecutter.include_http is selected_option or cookiecutter.include_sqs_listener is selected_option: TEMP-->
-        <jackson.version>2.14.1</jackson.version>
-        <!--TEMP endif TEMP-->
 
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
@@ -99,18 +96,6 @@
         <!--        Uncomment the ones you will need in your project and leave the others commented-->
         <!--        so as to reduce the JAR size and speed up the lambda load time.-->
 
-        <!--TEMP if cookiecutter.include_dynamodb is selected_option: TEMP-->
-        <dependency>
-            <groupId>software.amazon.awssdk</groupId>
-            <artifactId>dynamodb-enhanced</artifactId>
-        </dependency>
-        <!-- used by the dynamodb-enhanced library -->
-        <!-- If you comment out the dynamodb-enhanced library, comment this out also -->
-        <dependency>
-            <groupId>software.amazon.awssdk</groupId>
-            <artifactId>apache-client</artifactId>
-        </dependency>
-        <!--TEMP else: TEMP-->
         <!--        <dependency>-->
         <!--            <groupId>software.amazon.awssdk</groupId>-->
         <!--            <artifactId>dynamodb-enhanced</artifactId>-->
@@ -121,19 +106,11 @@
         <!--            <groupId>software.amazon.awssdk</groupId>-->
         <!--            <artifactId>apache-client</artifactId>-->
         <!--        </dependency>-->
-        <!--TEMP endif TEMP-->
 
-        <!--TEMP if cookiecutter.include_s3_listener is selected_option or cookiecutter.include_sqs_listener is selected_option: TEMP-->
-        <dependency>
-            <groupId>software.amazon.awssdk</groupId>
-            <artifactId>s3</artifactId>
-        </dependency>
-        <!--TEMP else: TEMP-->
         <!--        <dependency>-->
         <!--            <groupId>software.amazon.awssdk</groupId>-->
         <!--            <artifactId>s3</artifactId>-->
         <!--        </dependency>-->
-        <!--TEMP endif TEMP-->
         <!--        <dependency>-->
         <!--            <groupId>software.amazon.awssdk</groupId>-->
         <!--            <artifactId>sqs</artifactId>-->
@@ -143,18 +120,6 @@
         <!--            <artifactId>sns</artifactId>-->
         <!--        </dependency>-->
 
-        <!--TEMP if cookiecutter.include_http is selected_option or cookiecutter.include_sqs_listener is selected_option: TEMP-->
-        <dependency>
-            <artifactId>jackson-core</artifactId>
-            <groupId>com.fasterxml.jackson.core</groupId>
-            <version>${jackson.version}</version>
-        </dependency>
-        <dependency>
-            <artifactId>jackson-databind</artifactId>
-            <groupId>com.fasterxml.jackson.core</groupId>
-            <version>${jackson.version}</version>
-        </dependency>
-        <!--TEMP endif TEMP-->
 
         <!-- Test Dependencies -->
         <dependency>

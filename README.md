@@ -1,24 +1,58 @@
-# [TRA] Lambda Starter Template
+# FizzbuzzLambdaFunction QuickStart
 
-This contains a
-[cookiecutter](https://cookiecutter.readthedocs.io/en/stable/index.html)-based
-starter template for our lambdas. In particular, it encodes some of our reference
-architectural patterns around lambdas.
+The Serverless Application Model Command Line Interface (SAM CLI) is an extension of the AWS CLI that adds functionality
+for building and testing Lambda applications. It uses Docker to run your functions in an Amazon Linux environment that
+matches Lambda. It can also emulate your application's build environment and API.
 
-This template can be instantiated for a new project with
-```shell
-sam init --location git@github.com:turnitin/tra-template-lambda-java
+To use the SAM CLI, you need the following tools.
+
+* SAM CLI - [Install the SAM CLI](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-sam-cli-install.html)
+* Java11 - [Install the Java 11](https://docs.aws.amazon.com/corretto/latest/corretto-11-ug/downloads-list.html)
+* Maven - [Install Maven](https://maven.apache.org/install.html)
+* Docker - [Install Docker community edition](https://hub.docker.com/search/?type=edition&offering=community)
+
+
+## Deploy locally
+
+To build your application for the first time, run the following in your terminal:
+
+```bash
+sam build
 ```
 
-You should not need to checkout this repository, when working with lambdas.
+Once built there will be a new dir added `.aws-sam`
 
-If you want to make changes to the template itself however, then you would want
-to checkout this repository, make changes, and create a pull request, following
-the [Contributing](./CONTRIBUTING.md) instructions.
+## Deploy on AWS
 
-To test the template generation locally, run
-```shell
-sam init --location /path/to/tra-template-lambda-java
-```
+`sam deploy` will deploy with a default stack environment of `Dev001`. Optionally, you can customize your deployment by
+running `sam deploy --guided`.
 
+To "un-deploy" a stack from the AWS dev environment, run `aws cloudformation delete-stack --stack-name <stack-name>`.
+
+Note that in order to do this, you will need to have working AWS credentials for the environment you are deploying to,
+either `default` or env var `AWS_PROFILE` points to them.
+
+
+# FizzbuzzLambdaFunction Details
+
+This project contains source code and supporting files for a serverless application that you can deploy with the AWS SAM
+CLI. It includes the following files and folders:
+
+
+
+- events/sqs.json - An example SQSEvent for local testing.
+- pom.xml - Defines this multi-module Maven project with the three modules above.
+- samconfig.xml - SAM config for deployments.
+- template.yaml - SAM template that defines resources for these functions.
+- bitbucket-pipelines.yml - Bitbucket pipelines uses this, so it's for DevOps.
+
+
+This code has the following entry points configured:
+
+# Dependencies
+
+The TurnitinContext gives you an easy way to access various services (AWS as well as internal) simply by declaring the need when instanciating the TurnitinContext with the
+TurnitinContextCustomizer. However, in order to keep the final package as small possible the dependencies are commented out in the root `pom.xml`.  Therefore, when you
+add a dependency make sure you also uncomment it in the `pom.xml`.  Failure to do so will of course result in the runtime exception `ClassNotFoundException`.  For the sake
+of load times do not just uncomment all the dependencies or this will bloat your package and will slow down performance of your lambda and cost more to run.
 

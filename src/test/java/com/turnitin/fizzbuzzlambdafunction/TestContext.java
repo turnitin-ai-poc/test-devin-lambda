@@ -1,4 +1,4 @@
-package com.turnitin.__TEMP__project_name_lower_caseTEMP__;
+package com.turnitin.fizzbuzzlambdafunction;
 
 import com.amazonaws.services.lambda.runtime.ClientContext;
 import com.amazonaws.services.lambda.runtime.CognitoIdentity;
